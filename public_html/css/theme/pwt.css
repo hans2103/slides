@@ -11,8 +11,8 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #2C4B71;
-  background-color: #2C4B71; }
+  background-color: hsl(209, 14%, 37%);
+}
 
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
