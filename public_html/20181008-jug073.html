@@ -1,290 +1,297 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-		<title>Website optimaliseren - JUG073 augustus 2018</title>
+    <title>Website optimaliseren - JUG073 augustus 2018</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hans Kuijpers">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/pwt.css" id="theme">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/hkweb.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+<body>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+<div class="reveal">
 
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Joomla Content Editor</h1>
-					<h3>je website inrichten voor content edit</h3>
-					<p>
-						<small>Presentatie van <a href="http://hkweb.nl">Hans Kuijpers</a></small>
-					</p>
-				</section>
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Joomla Content Editor</h1>
+            <h3>je website inrichten voor content edit</h3>
+            <p>
+                <small>Presentatie van <a href="http://hkweb.nl">Hans Kuijpers</a></small>
+            </p>
+        </section>
 
 
+        TinyMCe - komt samen met default Joomla install
+        Deze kan al veel.. screenshot van edit article
 
 
-				TinyMCe - komt samen met default Joomla install
-				Deze kan al veel.. screenshot van edit article
+        <section>
+            <section>
+                <h2>Waarom?</h2>
+                <p>Omdat wachten niet leuk is... het kost je klanten</p>
+            </section>
 
+            <section>
+                <figure>
+                    <img src="images/20180807-jug073/giphy.webp">
+                    <figcaption><small>source: <a
+                            href="https://giphy.com/gifs/kim-novak-tXL4FHPSnVJ0A">Giphy</a></small></figcaption>
+                </figure>
+            </section>
+        </section>
 
+        <section>
+            <section>
+                <h2>Perceived performance</h2>
+                <p>
+                    Hoe snel de gebruiker <i>denkt</i> dat je website is.
+                </p>
+                <p class="fragment">
+                    <small>Vaak belangrijker dan de daadwerkelijke snelheid van je site</small>
+                </p>
+            </section>
 
+            <section>
+                <h2>Drie grenzen voor snelheid</h2>
+                <ul>
+                    <li>0.1 sec - direct</li>
+                    <li>1.0 sec - ok<small>ig</small></li>
+                    <li>10 sec - dikke doei</li>
+                </ul>
+                <p>
+                    <small>source: <a href="https://www.nngroup.com/articles/response-times-3-important-limits/">Response
+                        Times: The 3 Important Limits - by Jakob Nielsen on January 1, 1993</a></small>
+                </p>
+                <p class="fragment">Note: nu 25 jaar verder zal 5 sec de max zijn.</p>
+            </section>
+        </section>
 
-				<section>
-					<section>
-						<h2>Waarom?</h2>
-						<p>Omdat wachten niet leuk is... het kost je klanten</p>
-					</section>
+        <section>
+            <h2>Hoe kan het sneller?</h2>
+            <ul>
+                <li>Blijf up te date
+                    <ul>
+                        <li class="fragment">Joomla!</li>
+                        <li class="fragment">Joomla extensies</li>
+                        <li class="fragment">Hosting</li>
+                    </ul>
+                </li>
+                <li class="fragment">Optimaliseer
+                    <ul>
+                        <li class="fragment">Hosting</li>
+                        <li class="fragment">Extensies</li>
+                        <li class="fragment">Template</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-					<section>
-						<figure>
-							<img src="images/20180807-jug073/giphy.webp">
-							<figcaption><small>source: <a href="https://giphy.com/gifs/kim-novak-tXL4FHPSnVJ0A">Giphy</a></small></figcaption>
-						</figure>
-					</section>
-				</section>
+        <section>
+            <h2>Meten is weten</h2>
+            <p>Er zijn vele tools beschikbaar. Kies degene die je fijn vindt werken.</p>
+            <ul>
+                <li><a href="https://yellowlab.tools/">Yellow Lab Tools</a></li>
+                <li><a href="https://tools.pingdom.com/">Pingdom Website Speed Test</a></li>
+                <li><a href="https://www.webpagetest.org/">Web Page Twest</a></li>
+                <li><a href="https://developers.google.com/speed/pagespeed/insights/?hl=nl">PageSpeed Insights</a></li>
+                <li><a href="https://gtmetrix.com/">GT Metrix</a> - combinatie YSlow en PageSpeed</li>
+                <li><a href="https://testmysite.withgoogle.com/intl/en-gb">Mobile Website Speed Testing</a></li>
+            </ul>
+        </section>
 
-				<section>
-					<section>
-						<h2>Perceived performance</h2>
-						<p>
-							Hoe snel de gebruiker <i>denkt</i> dat je website is.
-						</p>
-						<p class="fragment">
-							<small>Vaak belangrijker dan de daadwerkelijke snelheid van je site</small>
-						</p>
-					</section>
+        <section>
+            <h2>Voorbeeld: schijndelfilm.nl</h2>
+            <img src="images/20180807-jug073/www.schijndelfilm.nl_.png"/>
+        </section>
 
-					<section>
-						<h2>Drie grenzen voor snelheid</h2>
-						<ul>
-							<li>0.1 sec - direct</li>
-							<li>1.0 sec - ok<small>ig</small></li>
-							<li>10 sec - dikke doei</li>
-						</ul>
-						<p>
-							<small>source: <a href="https://www.nngroup.com/articles/response-times-3-important-limits/">Response Times: The 3 Important Limits - by Jakob Nielsen on January 1, 1993</a></small>
-						</p>
-						<p class="fragment">Note: nu 25 jaar verder zal 5 sec de max zijn.</p>
-					</section>
-				</section>
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.42.58.png"
+        ">
 
-				<section>
-					<h2>Hoe kan het sneller?</h2>
-					<ul>
-						<li>Blijf up te date
-							<ul>
-								<li class="fragment">Joomla!</li>
-								<li class="fragment">Joomla extensies</li>
-								<li class="fragment">Hosting</li>
-							</ul>
-						</li>
-						<li class="fragment">Optimaliseer
-							<ul>
-								<li class="fragment">Hosting</li>
-								<li class="fragment">Extensies</li>
-								<li class="fragment">Template</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
+        </section>
 
-				<section>
-					<h2>Meten is weten</h2>
-					<p>Er zijn vele tools beschikbaar. Kies degene die je fijn vindt werken.</p>
-					<ul>
-						<li><a href="https://yellowlab.tools/">Yellow Lab Tools</a></li>
-						<li><a href="https://tools.pingdom.com/">Pingdom Website Speed Test</a></li>
-						<li><a href="https://www.webpagetest.org/">Web Page Twest</a></li>
-						<li><a href="https://developers.google.com/speed/pagespeed/insights/?hl=nl">PageSpeed Insights</a></li>
-						<li><a href="https://gtmetrix.com/">GT Metrix</a> - combinatie YSlow en PageSpeed</li>
-						<li><a href="https://testmysite.withgoogle.com/intl/en-gb">Mobile Website Speed Testing</a></li>
-					</ul>
-				</section>
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.38.58.png">
 
-				<section>
-					<h2>Voorbeeld: schijndelfilm.nl</h2>
-					<img src="images/20180807-jug073/www.schijndelfilm.nl_.png"/>
-				</section>
+        </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.42.58.png"">
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.13.png">
 
-				</section>
+        </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.38.58.png">
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.19.png">
 
-				</section>
+        </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.13.png">
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.35.png">
 
-				</section>
+        </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.19.png">
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.39.png">
 
-				</section>
+        </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.35.png">
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.42.png">
 
-				</section>
+        </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.39.png">
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.45.44.png">
 
-				</section>
+        </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.39.42.png">
+        <section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.49.07.png">
 
-				</section>
+        </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.45.44.png">
+        <section>
+            <section>
+                <h2>Rapport</h2>
+                <ul>
+                    <li>Reduce page weight</li>
+                    <li>Reduce number of requests</li>
+                    <li>Make a quick first impression</li>
+                </ul>
+            </section>
 
-				</section>
+            <section>
+                <h2>Reduce page weight</h2>
+                <ul>
+                    <li><a href="https://developers.google.com/speed/docs/insights/OptimizeImages">Compress images</a>
+                    </li>
+                    <li><a href="https://developers.google.com/speed/docs/insights/EnableCompression">Compress resources
+                        with GZIP</a></li>
+                    <li><a href="https://developers.google.com/speed/docs/insights/MinifyResources">Minify resources</a>
+                    </li>
+                </ul>
+            </section>
 
-				<section data-background-image="images/20180807-jug073/Schermafdruk 2018-08-06 11.49.07.png">
+            <section>
+                <h2>Reduce number of requests</h2>
+                <ul>
+                    <li><a href="https://developers.google.com/speed/docs/insights/LeverageBrowserCaching">Leverage
+                        browser caching</a></li>
+                    <li><a href="https://developers.google.com/speed/docs/insights/BlockingJS">Eliminate render-blocking
+                        JavaScript and CSS in above-the-fold content</a></li>
+                    <li><a href="https://developers.google.com/speed/docs/insights/AvoidRedirects">Avoid landing page
+                        redirects</a></li>
+                </ul>
+            </section>
 
-				</section>
+            <section>
+                <h2>Make a quick first impression</h2>
+                <ul>
+                    <li><a href="https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent">Load
+                        visible content before CSS and JS files</a></li>
+                    <li><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDeliverytweet">Reduce
+                        server response time</a></li>
+                </ul>
+            </section>
+        </section>
 
-				<section>
-					<section>
-						<h2>Rapport</h2>
-						<ul>
-							<li>Reduce page weight</li>
-							<li>Reduce number of requests</li>
-							<li>Make a quick first impression</li>
-						</ul>
-					</section>
+        <section>
+            <section>
+                <h2>Compress images</h2>
+                <p>verdubbel het formaat en optimaliseer als een gek</p>
+                <ul>
+                    <li><a href="https://www.netvlies.nl/tips-updates/algemeen/design-interactie/retina-revolutie/">Retina
+                        revolutie</a> (<a
+                            href="https://www.netvlies.nl/tips-updates/algemeen/design-interactie/retina-revolutie-follow-up/">vervolg</a>)
+                    </li>
+                </ul>
+            </section>
 
-					<section>
-						<h2>Reduce page weight</h2>
-						<ul>
-							<li><a href="https://developers.google.com/speed/docs/insights/OptimizeImages">Compress images</a></li>
-							<li><a href="https://developers.google.com/speed/docs/insights/EnableCompression">Compress resources with GZIP</a></li>
-							<li><a href="https://developers.google.com/speed/docs/insights/MinifyResources">Minify resources</a></li>
-						</ul>
-					</section>
+            <section>
+                <h2>Online image optimizers</h2>
+                <ul>
+                    <li><a href="https://kraken.io/web-interface">Kraken.io</a> (gratis en betaald) - <a
+                            href="https://github.com/pAnd0rASBG/plg_kraken">Joomla plugin</a></li>
+                    <li><a href="https://www.giftofspeed.com/">GiftOfSpeed</a> - <a
+                            href="https://www.giftofspeed.com/jpg-compressor/">JPEG Compressor & Resizer</a> - <a
+                            href="https://www.giftofspeed.com/png-compressor/">PNG Compressor</a> - <a
+                            href="https://www.giftofspeed.com/image-delivery/">Image Optimization Test</a></li>
+                </ul>
+            </section>
+        </section>
 
-					<section>
-						<h2>Reduce number of requests</h2>
-						<ul>
-							<li><a href="https://developers.google.com/speed/docs/insights/LeverageBrowserCaching">Leverage browser caching</a></li>
-							<li><a href="https://developers.google.com/speed/docs/insights/BlockingJS">Eliminate render-blocking JavaScript and CSS in above-the-fold content</a></li>
-							<li><a href="https://developers.google.com/speed/docs/insights/AvoidRedirects">Avoid landing page redirects</a></li>
-						</ul>
-					</section>
+        <section>
+            <section>
+                <h2>Compress resources with GZIP</h2>
+                <ul>
+                    <li>Systeem > Algemene Instellingen > Server > GZIP paginacompressie = JA</li>
+                    <li>EN hernoem htaccess.txt in root Joomla naar .htaccess</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Test het resultaat online</h2>
+                <p>via <a href="https://checkgzipcompression.com/">https://checkgzipcompression.com/</a></p>
+                <img src="images/20180807-jug073/Schermafdruk 2018-08-06 15.13.08.png"/>
+            </section>
+            <section>
+                <h2>Rich Link Preview</h2>
+                <p>Meer tools van dezelfde maker: <a href="https://richardstoolbox.com/">richardstoolbox.com</a></p>
+                <img src="images/20180807-jug073/Schermafdruk 2018-08-06 15.28.48.png"/></section>
+        </section>
 
-					<section>
-						<h2>Make a quick first impression</h2>
-						<ul>
-							<li><a href="https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent">Load visible content before CSS and JS files</a></li>
-							<li><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDeliverytweet">Reduce server response time</a></li>
-						</ul>
-					</section>
-				</section>
+        <section>
+            <section>
+                <h2>Minify resources</h2>
+                <p>Minimaliseer HTML, CSS en JS <br>
+                    middels plugin <a
+                            href="https://extensions.joomla.org/extensions/extension/core-enhancements/performance/jch-optimize/">JCH
+                        Optimize</a><br>
+                    <small>Deze extensie kan nog veel meer.</small></p>
+                <p>En / of begin al bij de basis van je template en schrijf kleinere css, kleinere js en minder
+                    html.</p>
+            </section>
+        </section>
 
-				<section>
-					<section>
-						<h2>Compress images</h2>
-						<p>verdubbel het formaat en optimaliseer als een gek</p>
-						<ul>
-							<li><a href="https://www.netvlies.nl/tips-updates/algemeen/design-interactie/retina-revolutie/">Retina revolutie</a> (<a href="https://www.netvlies.nl/tips-updates/algemeen/design-interactie/retina-revolutie-follow-up/">vervolg</a>)</li>
-						</ul>
-					</section>
+        <section>
+            <section>
+                <h2>Reduce Number of requests</h2>
+                <p>Activeren Joomla Caching en inzetten van JCH Optimize.</p>
+                <ul>
+                    <li>Systeem > Algemene Instellingen > Systeem > Cache-instellingen</li>
+                </ul>
+                <img src="images/20180807-jug073/Schermafdruk 2018-08-06 16.16.16.png" style="width:50%"/>
+            </section>
 
-					<section>
-						<h2>Online image optimizers</h2>
-						<ul>
-							<li><a href="https://kraken.io/web-interface">Kraken.io</a> (gratis en betaald) - <a href="https://github.com/pAnd0rASBG/plg_kraken">Joomla plugin</a></li>
-							<li><a href="https://www.giftofspeed.com/">GiftOfSpeed</a> - <a href="https://www.giftofspeed.com/jpg-compressor/">JPEG Compressor & Resizer</a> - <a href="https://www.giftofspeed.com/png-compressor/">PNG Compressor</a> - <a href="https://www.giftofspeed.com/image-delivery/">Image Optimization Test</a></li>
-						</ul>
-					</section>
-				</section>
+            <section>
+                <h2>Systeem cache</h2>
+                <p>
+                    In of uitschakelen cachen en instellen van cacheniveau.
+                </p>
+                <ul>
+                    <li>Conservatief niveau: kleinere systeemcache. <br>Aan te bevelen voor sites met veel updates.</li>
+                    <li>Progressief niveau: sneller, grotere systeemcache, inclusief het renderen van modulecache. <br>Niet
+                        aan te bevelen voor extreem grote websites.
+                    </li>
+                </ul>
+            </section>
 
-				<section>
-					<section>
-						<h2>Compress resources with GZIP</h2>
-						<ul>
-							<li>Systeem > Algemene Instellingen > Server > GZIP paginacompressie = JA</li>
-							<li>EN hernoem htaccess.txt in root Joomla naar .htaccess</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Test het resultaat online</h2>
-						<p>via <a href="https://checkgzipcompression.com/">https://checkgzipcompression.com/</a></p>
-						<img src="images/20180807-jug073/Schermafdruk 2018-08-06 15.13.08.png"/>
-					</section>
-					<section>
-						<h2>Rich Link Preview</h2>
-						<p>Meer tools van dezelfde maker: <a href="https://richardstoolbox.com/">richardstoolbox.com</a></p>
-						<img src="images/20180807-jug073/Schermafdruk 2018-08-06 15.28.48.png" /></section>
-				</section>
+            <section>
+                <h2>Leverage browser caching</h2>
+                <p>Server verzoekt browser bepaalde bestanden te bewaren voor later</p>
+                <p class="fragment">Via <i>Expire Headers</i> en/of <i>Cache Control</i></p>
+                <p class="fragment">.htaccess aanpassen <br>via JCH Optimize of zelfstandig (voorkeur)</p>
+            </section>
 
-				<section>
-					<section>
-						<h2>Minify resources</h2>
-						<p>Minimaliseer HTML, CSS en JS <br>
-							middels plugin <a href="https://extensions.joomla.org/extensions/extension/core-enhancements/performance/jch-optimize/">JCH Optimize</a><br>
-							<small>Deze extensie kan nog veel meer.</small></p>
-						<p>En / of begin al bij de basis van je template en schrijf kleinere css, kleinere js en minder html.</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Reduce Number of requests</h2>
-						<p>Activeren Joomla Caching en inzetten van JCH Optimize.</p>
-						<ul>
-							<li>Systeem > Algemene Instellingen > Systeem > Cache-instellingen</li>
-						</ul>
-						<img src="images/20180807-jug073/Schermafdruk 2018-08-06 16.16.16.png" style="width:50%"/>
-					</section>
-
-					<section>
-						<h2>Systeem cache</h2>
-						<p>
-							In of uitschakelen cachen en instellen van cacheniveau.
-						</p>
-						<ul>
-							<li>Conservatief niveau: kleinere systeemcache. <br>Aan te bevelen voor sites met veel updates. </li>
-							<li>Progressief niveau: sneller, grotere systeemcache, inclusief het renderen van modulecache. <br>Niet aan te bevelen voor extreem grote websites.</li>
-						</ul>
-					</section>
-
-					<section>
-						<h2>Leverage browser caching</h2>
-						<p>Server verzoekt browser bepaalde bestanden te bewaren voor later</p>
-						<p class="fragment">Via <i>Expire Headers</i> en/of <i>Cache Control</i></p>
-						<p class="fragment">.htaccess aanpassen <br>via JCH Optimize of zelfstandig (voorkeur)</p>
-					</section>
-
-					<section>
-						<h2>.htaccess wijzigen</h2>
-						<pre><code class="hljs">&lt;IfModule mod_expires.c&gt;
+            <section>
+                <h2>.htaccess wijzigen</h2>
+                <pre><code class="hljs">&lt;IfModule mod_expires.c&gt;
     ExpiresActive on
     ExpiresDefault              "access plus 1 month"
     # CSS
@@ -293,26 +300,27 @@
     ExpiresByType text/html     "access plus 0 seconds"
 &lt;/IfModule&gt;
 					</code></pre>
-						<p><a href="https://gist.github.com/hans2103/54cb1079dd0561e28b71ac43d0d8c1fd">customized .htaccess v3.0.0 with Joomla additions</a></p>
-					</section>
-				</section>
+                <p><a href="https://gist.github.com/hans2103/54cb1079dd0561e28b71ac43d0d8c1fd">customized .htaccess
+                    v3.0.0 with Joomla additions</a></p>
+            </section>
+        </section>
 
-				<section>
-					<h2>Eliminate render-blocking JavaScript and CSS in above-the-fold content</h2>
-					<p>Gaat voor hier veel te ver</p>
-				</section>
+        <section>
+            <h2>Eliminate render-blocking JavaScript and CSS in above-the-fold content</h2>
+            <p>Gaat voor hier veel te ver</p>
+        </section>
 
-				<section>
-					<h2>Avoid Landing Page Redirects</h2>
-					<p>http://example.com <br>
-						&rarr; http://www.example.com <br>
-						&rarr; https://www.example.com</p>
-					<p>Deze <i>redirect chains</i> kost je punten (15% per keer) in Google index.</p>
-				</section>
+        <section>
+            <h2>Avoid Landing Page Redirects</h2>
+            <p>http://example.com <br>
+                &rarr; http://www.example.com <br>
+                &rarr; https://www.example.com</p>
+            <p>Deze <i>redirect chains</i> kost je punten (15% per keer) in Google index.</p>
+        </section>
 
-				<section>
-					<h2>htaccess wijziging</h2>
-					<pre><code class="hljs">&lt;IfModule mod_rewrite.c&gt;
+        <section>
+            <h2>htaccess wijziging</h2>
+            <pre><code class="hljs">&lt;IfModule mod_rewrite.c&gt;
 RewriteEngine On
 
 Options +FollowSymlinks
@@ -321,68 +329,64 @@ RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www.schijndelfilm.nl$
 RewriteRule ^ https://www.schijndelfilm.nl%{REQUEST_URI} [R=301,L]
 &lt;/IfModule&gt;</code></pre>
-				</section>
+        </section>
 
-				<section>
-					<h2>Load visible content before CSS and JS files</h2>
-					<ul>
-						<li>Eerst jouw HTML, dan pas 3th party widgets</li>
-						<li>Fallback bij Custom / Google Fonts </li>
-						<li>Minify Resources</li>
-						<li>Consider using CSS instead of images where possible</li>
-						<li>Enable Compression</li>
-					</ul>
-				</section>
+        <section>
+            <h2>Load visible content before CSS and JS files</h2>
+            <ul>
+                <li>Eerst jouw HTML, dan pas 3th party widgets</li>
+                <li>Fallback bij Custom / Google Fonts</li>
+                <li>Minify Resources</li>
+                <li>Consider using CSS instead of images where possible</li>
+                <li>Enable Compression</li>
+            </ul>
+        </section>
 
-				<section>
-					<h2>Reduce server response time</h2>
-					<p>Gaat voor hier veel te ver</p>
-				</section>
+        <section>
+            <h2>Reduce server response time</h2>
+            <p>Gaat voor hier veel te ver</p>
+        </section>
 
-				<section>
-					<h2>Yellow lab tools voor en na</h2>
-					<img src="images/20180807-jug073/Schermafdruk 2018-08-07 23.44.05.png"/>
-					<p><a href="https://yellowlab.tools/result/f3musin4en">voor</a> - <a href="https://yellowlab.tools/result/f3n1i5ry2t">na</a></p>
-				</section>
-				<section>
-					<h2>Vragen?</h2>
-				</section>
+        <section>
+            <h2>Yellow lab tools voor en na</h2>
+            <img src="images/20180807-jug073/Schermafdruk 2018-08-07 23.44.05.png"/>
+            <p><a href="https://yellowlab.tools/result/f3musin4en">voor</a> - <a
+                    href="https://yellowlab.tools/result/f3n1i5ry2t">na</a></p>
+        </section>
+        <section>
+            <h2>Vragen?</h2>
+        </section>
 
-				<section>
-					<h2>slides</h2>
-					<p><a href="https://www.slideshare.net/hans2103/joomla-website-optimaliseren-jug073-augustus-2018">Slideshare.net/hans2103</a></p>
-				</section>
-			</div>
+        <section>
+            <h2>slides</h2>
+            <p><a href="https://www.slideshare.net/hans2103/joomla-website-optimaliseren-jug073-augustus-2018">Slideshare.net/hans2103</a>
+            </p>
+        </section>
+    </div>
 
-		</div>
+</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+<script src="dist/reveal.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/search/search.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
 
-		<script>
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
 
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+</script>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/search/search.js', async: true },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
-
-	</body>
+</body>
 </html>
