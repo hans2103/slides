@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta name="description" content="Joomla! template overrides">
+    <meta name="author" content="Hans Kuijpers">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/hkweb.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Joomla! Template Overrides</h1>
+            <h3>zet Joomla! naar je eigen hand</h3>
+            <p>
+                <small>Presentatie van <a href="http://hkweb.nl">Hans Kuijpers</a></small>
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Wat is een template override?</h2>
+                <p>Een stuk code dat ingeladen wordt in plaats van Joomla! core.</p>
+            </section>
+
+            <section>
+                <h2>Waarom maak je een override?</h2>
+                <ul>
+                    <li class="fragment">Omdat je iets wil wijzigen. En je maakt geen core hacks.</li>
+                    <li class="fragment">Om te voorkomen dat je een 3th party extensie moet installeren.</li>
+                    <li class="fragment">Zet de code en uiterlijk naar eigen hand.</li>
+                    <li class="fragment">Behoud code bij een upgrade.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Hoe maak je een override?</h2>
+                <ul>
+                    <li class="fragment">Via Joomla! Administrator</li>
+                    <li class="fragment">Via CLI of File Manager</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Template override via Joomla! Administrator</h2>
+            </section>
+
+            <section>
+                <h2>Pagina login</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 11.51.39.png"/>
+            </section>
+
+            <section>
+                <h2>Voor en na</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 11.41.08.png"/>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 11.41.10.png"/>
+            </section>
+
+            <section>
+                <h2>Dev Tools om te inspecteren</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 11.49.52.png"/>
+            </section>
+
+            <section>
+                <p>Joomla! Administrator > System > Site Templates<br/>Maak override van com_users/login</p>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 11.54.59.png"/>
+            </section>
+
+            <section>
+                <p>Open default_login.php om te bewerken</p>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 12.01.23.png"/>
+            </section>
+
+            <section>
+                <p>className <code>w-100</code> toevoegen</p>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 12.02.08.png"/>
+            </section>
+
+            <section>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 12.02.48.png"/>
+            </section>
+
+            <section>
+                <h2>Nu jullie</h2>
+                <ul>
+                    <li>Pagina /login button breed maken</li>
+                    <li>Development toolbar gebruiken om het juiste component en view op te sporen.</li>
+                    <li>Template override via System > Site Templates > [template] > Create Override</li>
+                    <li>Bestand bewerken via System > Site Templates > [template] > Editor</li>
+                    <li>className <code>w-100</code> toevoegen bij de login button</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Template override voor programmeurs</h2>
+                <p>Joomla! is opgebouwd volgens MVC model.</p>
+                <p>Overrides en Alternate Layouts mogelijk</p>
+            </section>
+
+            <section>
+                <h2>FAQ items</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 15.44.30.png"/>
+            </section>
+
+            <section>
+                <h2>Wat is het?</h2>
+                <ul>
+                    <li>Een Joomla! module <code>mod_articles_category</code></li>
+                    <li class="fragment">Toont <em>titels</em> en <em>tekst</em> van een gekozen categorie</li>
+                    <li class="fragment">Met de HTML en CSS van Bootstrap Accordion</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Module Aricles Category positie main-top</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 15.50.25.png"/>
+            </section>
+
+            <section>
+                <h2>getbootstrap.com Accordion</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 15.54.23.png"/>
+            </section>
+
+            <section>
+                <h2>Copy & Paste</h2>
+                <ul>
+                    <li>/modules/mod_articles_category/tmpl</li>
+                    <li>Kopieer <code>default.php</code></li>
+                    <li>/templates/[template]/html/mod_articles_category</li>
+                    <li>Plak als <code>faq.php</code></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Verwijderen wat je niet nodig hebt</h2>
+                <p>Alles na het volgende mag weg</p>
+                <pre><code>if (!$list) {
+    return;
+}
+?>             </code></pre>
+            </section>
+
+            <section>
+                <h2>En coderen wat je wil</h2>
+                <p>En plaats de HTML gekopieerd vanuit Bootstrap</p>
+                <pre><code><div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>             </code></pre>
+            </section>
+
+            <section>
+                <h2>Controleer het resultaat</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 16.03.44.png"/>
+            </section>
+
+            <section>
+                <h2>Module setting wijzigen</h2>
+                <p>Module > Advanced > Layout = FAQ</p>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 16.03.10.png"/>
+            </section>
+
+            <section>
+                <h2>Controleer het resultaat</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 16.07.02.png"/>
+            </section>
+
+            <section>
+                <h2>Code wijzigen... van</h2>
+                <pre><code data-line-numbers="1,38"><div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Accordion Item #1
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Accordion Item #3
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+</div>
+
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Code wijzigen... naar</h2>
+                <pre><code data-line-numbers="2-4"><div class="accordion" id="accordionExample">
+    &lt;?php foreach ($list as $item) : ?>
+        bla
+    &lt;?php endforeach; ?>
+</div>
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Code wijzigen... naar</h2>
+                <pre><code data-line-numbers="3-8"><div class="accordion" id="accordionExample">
+    &lt;?php foreach ($list as $item) : ?>
+        <div class="accordion-item">
+            titel
+            tekst
+        </div>
+    &lt;?php endforeach; ?>
+</div></code></pre>
+            </section>
+
+            <section>
+                <h2>Titel wijzigen... naar</h2>
+                <pre><code><h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+    </button>
+</h2></code></pre>
+            </section>
+
+            <section>
+                <h2>Dynamische maken</h2>
+                <pre><code><h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#&lt;?php echo $item->alias; ?>" aria-expanded="false" aria-controls="&lt;?php echo $item->alias; ?>">
+        &lt;?php $item->title; ?>
+    </button>
+</h2></code></pre>
+            </section>
+
+            <section>
+                <h2>Code wijzigen... naar</h2>
+                <pre><code data-line-numbers="4-8"><div class="accordion" id="accordionExample">
+    &lt;?php foreach ($list as $item) : ?>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#&lt;?php echo $item->alias; ?>" aria-expanded="false" aria-controls="&lt;?php echo $item->alias; ?>">
+                    &lt;?php echo htmlspecialchars($item->title, ENT_COMPAT, 'UTF-8', false); ?>
+                </button>
+            </h2>
+            tekst
+        </div>
+    &lt;?php endforeach; ?>
+</div>
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Tekst wijzigen... naar</h2>
+                <pre><code><div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+    </div>
+</div></code></pre>
+            </section>
+
+            <section>
+                <h2>Dynamisch maken</h2>
+                <pre><code><div id="&lt;?php echo $item->alias; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+        &lt;?php echo $item->introtext; ?>
+    </div>
+</div></code></pre>
+            </section>
+
+            <section>
+                <h2>Code wijzigen... naar</h2>
+                <pre><code data-line-numbers="9-13"><div class="accordion" id="accordionExample">
+    &lt;?php foreach ($list as $item) : ?>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#&lt;?php echo $item->alias; ?>" aria-expanded="false" aria-controls="&lt;?php echo $item->alias; ?>">
+                    &lt;?php echo htmlspecialchars($item->title, ENT_COMPAT, 'UTF-8', false); ?>
+                </button>
+            </h2>
+            <div id="&lt;?php echo $item->alias; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    &lt;?php echo $item->introtext; ?>
+                </div>
+            </div>
+        </div>
+    &lt;?php endforeach; ?>
+</div>
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Controleer het resultaat</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 16.21.31.png"/>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Kleuren wijzigen</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 08.43.09.png"/>
+            </section>
+
+            <section>
+                <h2>View Source</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 08.56.43.png"/>
+            </section>
+
+            <section>
+                <h2>WebAssetManager</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 08.54.17.png"/>
+            </section>
+
+            <section>
+                <h2>media > template > site > cassiopeia_child > css > user.css</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 08.55.09.png"/>
+            </section>
+
+            <section>
+                <h2>media > template > site > cassiopeia_child > css > user.css</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 08.55.40.png"/>
+            </section>
+
+            <section>
+                <h2>Controleer het resultaat</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 08.55.30.png"/>
+            </section>
+
+            <section>
+                <h2>View Source</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 08.57.14.png"/>
+            </section>
+
+            <section>
+                <h2>Default kleuren aanpassen</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 08.55.30.png"/>
+            </section>
+
+            <section>
+                <h2>Default kleuren aanpassen</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 09.03.55.png"/>
+            </section>
+
+            <section>
+                <h2>Default kleuren aanpassen</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 09.06.59.png"/>
+            </section>
+
+            <section>
+                <h2>user.css</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 09.09.35.png"/>
+            </section>
+
+            <section>
+                <h2>Controleer het resultaat</h2>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 09.09.33.png"/>
+            </section>
+
+            <section>
+                <h2>Custom Property wijzigen met javascript</h2>
+                <pre><code>let root = document.documentElement;
+root.style.setProperty('--cassiopeia-color-primary','#00bb00');</code></pre>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-19 om 09.17.39.png"/>
+            </section>
+
+
+
+
+        </section>
+
+        <section>
+            <section>
+                <h2>Aankomende events</h2>
+                <p>Module mod_articles_category</p>
+                <img data-src="images/20240419-roc/Scherm­afbeelding 2024-04-17 om 16.39.19.png"/>
+            </section>
+        </section>
+
+
+
+        <section style="text-align: left;">
+            <h1>THE END</h1>
+            <p>
+                - <a href="https://slides.com">Try the online editor</a> <br>
+                - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+            </p>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/zoom/zoom.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/search/search.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+
+</script>
+
+</body>
+</html>
