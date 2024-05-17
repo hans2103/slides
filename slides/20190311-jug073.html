@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>RSForm!Pro - JUG073 maart 2019</title>
+
+    <meta name="description" content="RSForm!Pro - JUG073 maart 2019">
+    <meta name="author" content="Hans Kuijpers">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/hkweb.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>RSForm!Pro</h1>
+            <h3>Meer dan een contactformulier</h3>
+            <p>
+                <small>Presentatie van <a href="http://hkweb.nl">Hans Kuijpers</a></small>
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Iedere Joomla beheerder werkt met formulieren</h2>
+                <p class="fragment">Jij dus ook!</p>
+            </section>
+
+            <section>
+                <h2>Administrator login</h2>
+                <p>Formulier om jouw inloggegevens te versturen</p>
+                <img src="images/20190311-jug073/jug073.test_administrator_.png" width="400"/>
+            </section>
+
+            <section>
+                <h2>Items toevoegen en bewerken</h2>
+                <p>Formulier om nieuwe data naar database te sturen</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2011.18.47.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Dus wat is een formulier:</h2>
+                <ul>
+                    <li>Een of meerdere velden die inhoud krijgen</li>
+                    <li>Een knop om die inhoud te versturen
+                        <ul>
+                            <li class="fragment">Versturen is optioneel. :-)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Dus wat is een formulier:</h2>
+                <p>Poging twee...</p>
+                <ul>
+                    <li>Een of meerdere velden die inhoud krijgen.</li>
+                    <li>En daar gaan we iets mee doen.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Praktische voorbeelden</h2>
+                <ul>
+                    <li>Contactformulier
+                        <ul>
+                            <li class="fragment">Met selecteerbaar onderwerp</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Meertalige bedanktpagina</li>
+                    <li class="fragment">Besparingscalculator</li>
+                    <li class="fragment">Beperkte beschikbaarheid</li>
+                </ul>
+            </section>
+        </section>
+
+        <section data-background-image="images/20190311-jug073/Schermafdruk 2019-03-11 10.19.35.png"></section>
+
+        <section>
+            <section>
+                <h2>Contactformulier</h2>
+                <p>Met selecteerbaar onderwerp</p>
+                <p class="fragment">En specificatie daarvan</p>
+            </section>
+
+            <section>
+                <p>Onderwerp selecteerbaar</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Diverse onderwerpen</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.25.26.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Onderwerp geselecteerd... <br>extra veld verschijnt</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier_kopie.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Ander onderwerp geselecteerd... <br>ander extra veld verschijnt</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier_kopie_2.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Automatisch gegenereerde content in dropdown</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.27.21.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Hoe dan?</h2>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.38.04.png" width="600" class="fragment"/>
+            </section>
+
+            <section>
+                <h2>veld type = Dropdown</h2>
+                <p>invoer: "<code>value|text</code>" of "<code>text</code>"</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.56.31.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Weergave op voorzijde</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.25.26.png" width="600"/>
+            </section>
+
+            <section>
+                <p>"Factuur/betaling" geselecteerd<br>"Factuurnummer" verschijnt</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier_factuurnummer.png" width="600"/>
+            </section>
+
+            <section>
+                <p>"Training of workshop" geselecteerd<br>Dropdown verschijnt</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier_training.png" width="600"/>
+            </section>
+
+            <section>
+                <p>"Opleiding" geselecteerd<br>Dropdown verschijnt</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier_opleiding.png"
+                     width="600"/>
+            </section>
+
+            <section>
+                <p>"Anders, nl:" geselecteerd<br>"Onderwerp" verschijnt</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier_onderwerp.png"
+                     width="600"/>
+            </section>
+
+            <section>
+                <h2>Voorwaardelijke velden</h2>
+                <p>Via Eigenschappen > Extra's > Voorwaardelijke velden</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.46.31.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Toon of verberg geselecteerd veld indien aan een of meerdere voorwaarden voldaan is.</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.47.32.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>veld type = Dropdown</h2>
+                <p>invoer: "<code>value|text</code>" of "<code>text</code>"</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.56.31.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>veld type = Dropdown</h2>
+                <p>maar dan gevuld door PHP code</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.57.11.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Maatwerp PHP</h2>
+                <p>Return titels van artikelen <br>van subcategorieën <br>van de opgegeven categorie id.</p>
+                <pre><code>//&lt;code&gt;
+  require_once JPATH_SITE . '/templates/cvmsynap/html/com_rsform/custom/contact.php';
+  return (new ContactHelper)->getCourses(1402);
+//&lt;/code&gt;</code></pre>
+                <p>Code staat op <a href="https://gist.github.com/hans2103/94a4dc741205e50e9980a91fa20b8d9a"
+                                    target="_blank">gist.github.com/hans2103</a></p>
+            </section>
+
+            <section>
+                <p>Automatisch gegenereerde content in dropdown</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.27.21.png" width="600"/>
+            </section>
+
+        </section>
+
+        <section>
+            <section>
+                <h2>RSForm!Pro ondersteunind meertaligheid</h2>
+                <p>Irritant om mee te werken, maar verrekte fijn dat het mogelijk is.</p>
+            </section>
+
+            <section>
+                <p>Formulier in het Nederlands</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Hetzelfde formulier in het Engels</p>
+                <img src="images/20190311-jug073//centrumvoormindfulness.nl_en_contact_form.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Joomla administrator</h2>
+                <p>Formulier in het Nederlands</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_administrator_index.php_option=com_rsform&task=forms.edit&formId=2&tabposition=0&lang=NL.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Wisseling via taalswitch</h2>
+                <p>Via dropdown linksboven edit venster formulier</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2014.19.30.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Joomla administrator</h2>
+                <p>Formulier in het Engels</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_administrator_index.php_option=com_rsform&task=forms.edit&formId=2&tabposition=0&lang=EN.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Blauw vlaggetje</h2>
+                <p>Indicator voor meertalig veld</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2013.57.11.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Blauw vlaggetje</h2>
+                <p>Indicator voor meertalig veld</p>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2014.23.33.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Formulier in het Nederlands</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_contact_formulier.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Hetzelfde formulier in het Engels</p>
+                <img src="images/20190311-jug073//centrumvoormindfulness.nl_en_contact_form.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Aparte pagina voor succes</h2>
+                <p>Na versturen van formulier kom je op een aparte bedanktpagina</p>
+                <ul>
+                    <li>Menu item verwijzend naar content item</li>
+                    <li>Duidelijke structuur</li>
+                    <li>Handig voor conversiemeting</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Bedanktpagina in het Nederlands</h2>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2014.28.13.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Bedanktpagina in het Engels</h2>
+                <img src="images/20190311-jug073/Schermafdruk%202019-03-11%2014.28.35.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Terugkeer URL</h2>
+                <p>Via Eigenschappen > Wijzig formulier > Inzending</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_administrator_index.php_option=com_rsform&task=forms.edit&formId=2&tabposition=0-empty.png" width="600"/>
+                <p class="fragment">Let op: geen vlaggetje, dus niet meertalig</p>
+            </section>
+
+            <section>
+                <h2>Meertalige terugkeer URL</h2>
+                <p>Via Eigenschappen > Wijzig formulier > Inzending</p>
+                <img src="images/20190311-jug073/centrumvoormindfulness.nl_administrator_index.php_option=com_rsform&task=forms.edit&formId=2&tabposition=0-meertalig.png" width="600"/>
+                <div class="fragment">
+                    <p>Hidden input field</p>
+                    <img src="images/20190311-jug073/centrumvoormindfulness.nl_administrator_index.php_option=com_rsform&task=forms.edit&formId=2&tabposition=0-hidden-field.png" width="600"/>
+                    <p><code>/en/returnURL</code> en <code>/terugkeerURL</code></p>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Besparingscalculator</h2>
+                <p>Rekenen met RSForm</p>
+                <p>Geen verzendknop nodig</p>
+            </section>
+
+            <section>
+                <img src="images/20190311-jug073/dreumex.com_besparingscalculator.png" width="300"/>
+                <p>Demo op <a href="https://dreumex.com/besparingscalculator"
+                                target="_blank">https://dreumex.com/besparingscalculator</a></p>
+            </section>
+
+            <section>
+                <h2>Voer simpele calculaties uit met</h2>
+                <ul>
+                    <li>Getallen in input velden</li>
+                    <li>Getallen in dropdown velden</li>
+                    <li>Getallen in radio buttons</li>
+                    <li>Maar ook met kalender en tijd</li>
+                </ul>
+                <p>Leesvoer op <a href="https://www.rsjoomla.com/support/documentation/rsform-pro/getting-started/form-calculations.html" target="_blank">RSJoomla Documentatie</a>.</p>
+            </section>
+
+            <section>
+                <h2>Werkwijze</h2>
+                <ul>
+                    <li>Maak al je velden aan en geef ze handige namen</li>
+                    <li>Maak zo nodig ook radio boxes aan.... keuze klikken gaat sneller dan getal intikken.
+                    <ul>
+                        <li>Opbouw invoer items<br><pre><code>16GB|16GB - $399[p399][c]
+32GB|32GB - $499[p499]
+64GB|64GB - $599[p599]</code></pre></li>
+                    </ul></li>
+                    <li>Door naar de calculatie</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Berekeningen</h2>
+                <p>Via Eigenschappen > Extra's > Berekeningen</p>
+
+                <img src="images/20190311-jug073/dreumex.com_administrator_index.php_option=com_rsform&view=forms&layout=edit&formId=5.png" width="700"/></section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Beperkte toegang</h2>
+                <p>Verkoop van filmtickets met beperkt aantal toegangskaarten</p>
+                <p>Voorbeeld door Ernst Sangen.</p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Dank je wel</h2>
+                <img data-src="https://media.giphy.com/media/3o7TKqFZJpwL8Giz2E/giphy.gif"/>
+            </section>
+
+            <section>
+                <h2>slides</h2>
+                <p><a href="https://www.slideshare.net/hans2103/joomla-rsform-pro-jug073-maart-2019">Slideshare.net/hans2103</a>
+                </p>
+            </section>
+        </section>
+    </div>
+
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/zoom/zoom.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/search/search.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+
+</script>
+
+</body>
+</html>

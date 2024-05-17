@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>RSFrom!Pro submission to Google Sheets - JUG043 7 juni 2021</title>
+
+    <meta name="description" content="RSForm!Pro submissions to Google Sheets - JUG073 juni 2021">
+    <meta name="author" content="Hans Kuijpers">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/hkweb.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>RSForm!Pro inzendingen naar Google Sheets</h1>
+            <p>
+                <small>Presentatie van <a href="http://hkweb.nl">Hans Kuijpers</a></small>
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <p>Formulierinzendingen vanuit de mail handmatig overnemen naar een spreadsheet, <br/>of
+                    formulierinzendingen direct ontvangen in een spreadsheet.</p>
+            </section>
+            <section>
+                <img src="images/20210607-jug040/rsform_gsheets.png" width="600"/>
+                <p>Google Sheets<br/>een betaalde plugin voor RSForm!Pro van RSJoomla.</p>
+            </section>
+
+            <section>
+                <h2>Download de plugin</h2>
+                <p>Deze betaalde plugin kun je downloaden via je RSJoomla account > My Downloads > RSForm!Pro - Modules
+                    & Plugins > Plugins > "Google Sheets".</p>
+                <img src="images/20210607-jug040/9f36513571e37fb9ecd8b396867f200e.jpg" width="600"/>
+            </section>
+
+            <section>
+                <h2>Plugin installeren</h2>
+                <ul>
+                    <li>Joomla administrator > Extensies > Beheer > Installeren.</li>
+                    <li>Joomla administrator > Extensies > Plugins en zoek op "System - RSForm! Pro Google Sheets"
+                        plugin.
+                    </li>
+                </ul>
+                <img src="images/20210607-jug040/30a0cd1b745d87d7cac9024c0a85630c.png" width="600"/>
+            </section>
+
+            <section>
+                <h2>Verbinden met Google Sheets</h2>
+                <p>Volg stappenplan
+                    https://www.rsjoomla.com/support/documentation/rsform-pro/plugins-and-modules/plugin-google-sheets.html</p>
+                <ul>
+                    <li>Ga naar <a href="https://console.developers.google.com/">Google Developers Console</a>.</li>
+                    <li>Log in met je Google-account en <strong>maak een nieuw project aan</strong>.</li>
+                    <li>Voeg een projectnaam, organisatie, locatie toe en klik op de knop "<strong>Maken<strong>" (wacht
+                        even nadat u op de knop Aanmaken hebt geklikt om uw project te laden, anders kunt u het
+                        handmatig selecteren).</li>
+                    <li>Zoek in de Dashboard-weergave naar '<em>Google Spreadsheets API</em>' en open deze.</li>
+                    <li>Schakel de "<strong>Google Spreadsheets API</strong>" in door bovenaan op de knop "<strong>Inschakelen</strong>"
+                        te klikken.
+                    </li>
+                    <li>Klik op "<strong>Inloggegevens</strong>" in de linkerzijbalk.</li>
+                    <li>Klik op de knop "<strong>Toestemmingsscherm configureren</strong>".</li>
+                    <li>Voer een applicatienaam in (bijvoorbeeld: RSForm!Pro Google Spreadsheets) en klik op <strong>Opslaan</strong>
+                    </li>
+                    <li>Klik vervolgens op de knop "<strong>Inloggegevens maken</strong>" en selecteer de optie
+                        "<strong>OAuth-client-ID</strong>".
+                    </li>
+                    <li>Selecteer "<strong>Webapplicatie</strong>" en voeg een Naam toe.</li>
+                    <li>Voeg binnen de "<strong>Geautoriseerde JavaScript-oorsprong</strong>" uw website toe
+                        (bijvoorbeeld: https://www.rsjoomla.com). Als je op localhost bent, kun je dit leeg laten.
+                    </li>
+                    <li>Voeg binnen de "<strong>Authorized redirect URI's</strong>" de reeds gegenereerde URL toe die
+                        gevonden is via backend > Componenten > RSForm!Pro > Configuratie > Google Spreadsheets >
+                        "Redirect URI".
+                    </li>
+                    <li>Klik op de knop Maken.</li>
+                    <li>Nu worden er twee sleutels gegenereerd, client-ID en clientgeheim dat u in uw installatie moet
+                        plaatsen binnen backend > Componenten > RSForm!Pro > Configuratie > Google Spreadsheets >
+                        "<strong>Google Client-ID</strong>" respectievelijk "<strong>Google Secret</strong>"-velden.
+                    </li>
+                    <li>Gebruik de bovenste "<strong>Opslaan</strong>"-knop om uw sleutels op te slaan (deze moeten
+                        eerst worden opgeslagen).
+                    </li>
+                    <li>Nadat de pagina is vernieuwd, vindt u een nieuwe knop "<strong>Authenticeren</strong>" waarop u
+                        moet klikken. Als u dit doet, wordt u doorgestuurd naar Google om uw Google-account te kiezen en
+                        wordt u gevraagd de toepassing toe te staan.
+                    </li>
+                    <li>Als u op de knop Toestaan klikt, wordt u teruggeleid naar uw website waar een succesvolle groene
+                        "<strong>Toegangstoken succesvol is opgeslagen!</strong>" bericht zou moeten verschijnen als
+                        alles correct was geconfigureerd. Uiteindelijk zul je zien dat er meer gegevens worden
+                        gespecificeerd op het tabblad Google Spreadsheets van je RSForm!Pro-configuratie, maar het is
+                        niet nodig om hier verder iets te wijzigen.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Mapping aanmaken voor data</h2>
+                <p>Volg stappenplan
+                    https://www.rsjoomla.com/support/documentation/rsform-pro/plugins-and-modules/plugin-google-sheets.html</p>
+                <ul>
+                    <li>Open uw formulier in de backend > Componenten > RSForm!Pro > Formulieren beheren > uw formulier
+                        > Formuliereigenschappen > tabblad <strong>Google Spreadsheets-instellingen</strong>.
+                    </li>
+                    <li>Schakel de optie '<strong>Google Spreadsheets gebruiken</strong>' in.</li>
+                    <li>Als de optie '<strong>Blad bijwerken wanneer betaling is voltooid</strong>' is ingeschakeld,
+                        wordt de Google-spreadsheet pas bijgewerkt nadat de betaling is bevestigd met behulp van de knop
+                        '<strong>Betaling bevestigen</strong>' tijdens het bewerken van de inzending. Het bevestigen van
+                        een betaling wordt gebruikt wanneer de gateway deze om de een of andere reden niet heeft
+                        bevestigd of bij gebruik van overboekingsmethoden waarbij de betaling handmatig door u is
+                        bevestigd.
+                    </li>
+                    <li>Bij het inschakelen van '<strong>Toon API-berichten</strong>' worden de foutmeldingen
+                        weergegeven bij verzending.
+                    </li>
+                    <li>Voeg uw "<strong>Spreadsheet-ID</strong>" toe. Dit kan de exacte ID van uw spreadsheet zijn of
+                        de volledige URL (meer details hieronder).
+                    </li>
+                    <li>Klik op de bovenste knop <strong>Opslaan</strong> (dit moet eerst worden opgeslagen om uw bladen
+                        en hun kolommen op te halen).
+                    </li>
+                    <li>Als uw spreadsheet meerdere bladen heeft, kunt u het gewenste blad selecteren in de
+                        vervolgkeuzelijst '<strong>Bladnaam</strong>'.
+                    </li>
+                    <li>Ten slotte, als uw blad kolommen heeft, zijn deze beschikbaar voor u om in kaart te brengen met
+                        de gegevens van uw formulier. Er is ook een tijdelijke aanduiding-selector voor elke kolom die
+                        kan worden gebruikt om de benodigde tijdelijke aanduiding van uw formulier op te nemen.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Spreadsheet-ID vinden</h2>
+                <ul>
+                    <li>ga naar Google Spreadsheets.</li>
+                    <li>toegang tot uw spreadsheet.</li>
+                    <li>let op de URL van de bovenste browser. Bijvoorbeeld:
+                        <ul>
+                            <li>https://docs.google.com/spreadsheets/d/UkFHSrjrhN9TzRRp47fr4JFJSA83rjFH1eFGr438v4/</li>
+                            <li>gebruik de URL of neem de ID van de URL, in dit geval is de ID de volgende:</li>
+                            <li>UkFHSrjrhN9TzRRp47fr4JFJSA83rjFH1eFGr438v4</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+        </section>
+
+        <section data-background-image="images/20210405-jug040/20200918_PC_PWT2015796736.jpg"></section>
+
+    </div>
+
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/zoom/zoom.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/search/search.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+
+</script>
+
+</body>
+</html>

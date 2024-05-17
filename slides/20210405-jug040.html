@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Google Analytics & Google Tag Manager - JUG040 April 2021</title>
+
+    <meta name="description" content="Google Analytics & Google Tag Manager - JUG073 april 2021">
+    <meta name="author" content="Hans Kuijpers">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/hkweb.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>GA via GTM</h1>
+            <h3>soort van receptenboek</h3>
+            <p>
+                <small>Presentatie van <a href="http://hkweb.nl">Hans Kuijpers</a></small>
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Google Analytics</h2>
+                <p>Momenteel de meest gebruikte tool voor analyseren van de websitepresetaties.</p>
+            </section>
+
+            <section>
+                <h2>Google Tag Manager</h2>
+                <p>Tag beheer systeem om snel en eenvoudig tags op je website te laten uitvoeren.</p>
+                <p class="fragment">Bijvoorbeeld de Google Analytics tag. </p>
+            </section>
+
+            <section>
+                <h2>Wat komt aan bod</h2>
+                <ul>
+                    <li>Google Tag Manager op jouw website</li>
+                    <li class="fragment">Google Universal Analytics via GTM</li>
+                    <li class="fragment">Nog een keer, maar dan beter. <br/><span class="fragment">Google Universal Analytics voor multisite via GTM</span>
+                    </li>
+                    <li class="fragment">Google Analytics V4</li>
+                </ul>
+            </section>
+
+            <section data-background-image="images/20210405-jug040/im-so-excited.jpg"></section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Google Tag Manager op jouw website</h2>
+                <p><a href="https://tagmanager.google.com">TagManager.Google.com</a></p>
+                <p class="fragment">uitleg via <a href="https://support.google.com/tagmanager/answer/6103696?hl=nl">Google
+                    Support</a></p>
+            </section>
+
+            <section>
+                <h2>Stap 1. ga naar https://tagmanager.google.com</h2>
+            </section>
+
+            <section>
+                <p>Maak een account en container aan</p>
+                <p>Dit gaat in 1 keer als je er nog nooit geweest bent.</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2015.36.53.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Accountnaam = klantnaam, container = domein</p>
+                <p class="fragment">Vind ikzelf handig.</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2015.38.11.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Serviceovereenkomst met Google Tag Manager</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2015.40.37.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Stap 2. Code om te kopiëren naar je website</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2015.40.45.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Stukje in de <code>&lt;head&gt;</code> en stukje in de <code>&lt;body&gt;</code></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2015.42.26.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Dashboard</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2015.43.31.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op GTM ID en krijg wederom je code in beeld</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2015.40.45.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Verwerken in je template</p>
+                <p>Extensions > Templates > Templates</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2016.19.00.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op index.php</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2016.19.06.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Om deze te kunnen bewerken</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2016.20.22.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Scroll naar <code>&lt;head&gt;</code></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2016.21.38.png" width="600"/>
+            </section>
+
+            <section>
+                <p>En plak de code van GTM</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2016.22.18.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Herhaal dit zodra Joomla van een update voorzien is.</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-02%20om%2016.21.38.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Joomla Extension Directory</p>
+                <p>Oplossingen die vaak meer doen dan hetgeen jij wil</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2008.59.18.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Of maak je eigen Joomla System Plugin</p>
+                <p>https://github.com/perfectwebteam/pwt-gtm</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.01.20.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Installeren, configureren en publiceren</p>
+                <p>Met alleen de code die GTM nodig heeft.</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.04.42.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Stap 3. Testen</p>
+                <p>Klik op de knop <em>voorbeeld</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.07.19.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Maar eerst een lege versie publiceren</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.08.56.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Maar eerst een lege versie publiceren</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.10.17.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Maar eerst een lege versie publiceren</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.10.56.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Debug venster configureren</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.11.42.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Debug venster maakt connectie</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.11.46.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Debug venster is verbonden</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.11.53.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Debug venster opent nieuw venster</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.12.01.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Debug venster toont resultaat</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2009.12.23.png" width="600"/>
+            </section>
+
+            <section data-background-image="images/20210405-jug040/d013340024fda00e94edb89536475e36.jpg"></section>
+        </section>
+
+
+        <section>
+            <section>
+                <h2>Google Universal Analytics via GTM</h2>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.43.53.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Ga naar Tags</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.43.56.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op nieuw</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.44.00.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Geef de tag een naam</p>
+                <p class="fragment">Voor Google Analytics gebruik ik GA</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.47.03.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op het vlak Tagconfiguratie</p>
+                <p class="fragment">En selecteer <em>Google Analytics - Universal Analytics</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.47.07.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Basisconfiguratie - tag</p>
+                <p class="fragment">En selecteer in de dropdown <em>Google Analytics-instellingen</em> voor <em>nieuwe
+                    variabele</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.47.12.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Basisconfiguratie - specifieke variabele</p>
+                <p class="fragment">Geef de variabele een naam en vul GA Property ID in</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.47.49.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Keer automatisch terug naar Tag</p>
+                <p class="fragment">Klik op het vlak bij Trigger</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.47.56.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Selecteer een trigger</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.48.07.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Keer automatisch terug naar Tag</p>
+                <p class="fragment">Klik op <em>Opslaan</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.48.11.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Keer automatisch terug naar overzicht van Tags</p>
+                <p class="fragment">Klik op <em>Voorbeeld</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.48.16.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Debugger start</p>
+                <p class="fragment">Zie dat de tag <em>Ga - Page View</em> uitgevoerd is</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.48.35.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Keer terug naar overzicht van Tags</p>
+                <p class="fragment">Klik op <em>Verzenden</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.49.19.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Geef de nieuwe versie een logische naam en klik op publiceren</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.49.50.png" width="600"/>
+            </section>
+
+            <section>
+                <p>De wijzigingen zijn actief</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.49.54.png" width="600"/>
+            </section>
+
+            <section data-background-image="images/20210405-jug040/d013340024fda00e94edb89536475e36.jpg"></section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Google Universal Analytics voor multisite via GTM</h2>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.43.53.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Ga naar variabelen en klik op nieuw</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.32.40.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Geef de nieuwe variabele een logische naam en klik variabeleconfiguratie</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.14.48.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Overzicht van <em>Type variabele</em> verschijnt en klik daarop</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.14.52.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Scroll naar beneden totdat je <em>Lookup Table ziet</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.15.05.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Kies variabele <em>{{Page Hostname}}</em> als <em>Invoervariabele</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.15.16.png" width="600"/>
+            </section>
+
+            <section>
+                <p>KLik op <em>Rij toevoegen</em> en vul <em>invoer</em> en <em>uitgang</em> in</p>
+                <p class="fragment">Voor elk domein een eigen GA Property ID.</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.26.53.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op opslaan en kom terug in het overzicht van variabelen.</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.26.58.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op variabele <em>GA - Settings</em> om de configuratie te bewerken</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.27.03.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Wijzig het veld <em>Tracking ID</em> en zoek variabele op door te starten met tikken van <em>{{</em>
+                </p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.27.12.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Selecteer <em>{{GA - Property ID}}</em> en klik op opslaan</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.27.15.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Doorloop het riedeltje voor aanmaken nieuwe versie.</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.27.29.png" width="600"/>
+            </section>
+
+            <section data-background-image="images/20210405-jug040/d013340024fda00e94edb89536475e36.jpg"></section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Google Analytics V4 via GTM</h2>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2012.43.53.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Als nog niet gedaan... </p>
+                <p>Ga naar anlytics.google.com en klik bij Property op "Instellassistent voor GA4"</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.42.44.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik <em>Aan de slag</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.42.54.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik <em>Property maken</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.43.09.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik <em>Uw GA4-property bekijken</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.43.15.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik rechts van <em>Taginstallatie</em> op chevron-right</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.43.23.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik rechts van <em>HKweb - GA4</em> op chevron-right</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.43.32.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Zie rechtsboven <em>Metings-ID</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.43.36.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Kopieer <em>Metings-ID</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.43.46.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Ga naar Google Tag Manager en ga naar <em>Variabelen</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.44.08.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op <em>Nieuw</em> om een nieuwe variabele aan te maken en geef de naam <em>GA4 - Meting ID</em>
+                </p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.44.20.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op grote vlak <em>Variabeleconfiguratie</em> en selecteer <em>Lookup Table</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.44.26.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Wijzig <em>Invoervariabele</em> naar <em>{{Page Hostname}}</em> en vul de <em>Lookup Table</em> met
+                    je gekopieerde <em>Meting ID</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.44.49.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik <em>Opslaan</em> en kom terug in overzicht van variabelen</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.44.55.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Ga naar <em>Tags</em> en klik op Nieuw</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.45.00.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Geef de tag een logische naam <em>GA4 - Page View</em> en klik op grote vlak <em>Tagconfiguratie</em>
+                </p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.45.13.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Selecteer de optie <em>Google Analytics: GA4-configuratie</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.45.18.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Start bij <em>Meting-ID</em> met tikken en zoek de variabele <em>{{GA4 - Meting ID}}</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.45.28.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op grote vlak bij <em>Triggers</em> en selecteer <em>All Pages</em></p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.45.43.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Twee tags... eentje voor Google Universal Analytics, de ander voor Google Analytics V4</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.45.47.png" width="600"/>
+            </section>
+
+            <section>
+                <p>Klik op <em>Verzenden</em> om nieuwe versie te publiceren</p>
+                <img src="images/20210405-jug040/Schermafbeelding%202021-04-05%20om%2013.45.56.png" width="600"/>
+            </section>
+
+            <section data-background-image="images/20210405-jug040/d013340024fda00e94edb89536475e36.jpg"></section>
+
+        </section>
+
+        <section data-background-image="images/20210405-jug040/thank-you.jpg"></section>
+        <section data-background-image="images/20210405-jug040/20200918_PC_PWT2015796736.jpg"></section>
+
+    </div>
+
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/zoom/zoom.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/search/search.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+
+</script>
+
+</body>
+</html>

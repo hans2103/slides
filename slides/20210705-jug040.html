@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Structured Data voor FAQ pagina - JUG040 5 juli 2021</title>
+
+    <meta name="description" content="Structured Data voor FAQ pagina - JUG040 5 juli 2021">
+    <meta name="author" content="Hans Kuijpers">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/hkweb.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>FAQ Structured Data</h1>
+            <p>
+                <small>Presentatie van <a href="http://hkweb.nl">Hans Kuijpers</a></small>
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <h2>FAQ Structured Data</h2>
+                <ul>
+                    <li>FAQ = Frequently Asked Questions => veelgestelde vragen</li>
+                    <li>Structured Data = extra code die Google zal helpen om de content van een webpagina beter te
+                        begrijpen
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <img src="images/20210705-jug040/faq-structured-data--met-structured-data.png" width="800"/>
+                <p>Resultaten van zoekopdracht met FAQ structured data</p>
+            </section>
+
+            <section>
+                <img src="images/20210705-jug040/faq-structured-data--faq-opened.png" width="800"/>
+                <p>FAQ item is aanklikbaar en toont informatie vanuit de website</p>
+            </section>
+
+            <section>
+                <img src="images/20210705-jug040/faq-structured-data--op-de-website.png" width="800"/>
+                <p>Hetzelfde item, maar dan op de website</p>
+            </section>
+
+            <section>
+                <h2>Stappenplan voor inmplementatie</h2>
+                <ol>
+                    <li>Zorg voor content (vraag & antwoord)</li>
+                    <li>Maak override op mod_articles_category</li>
+                    <li>Testen</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Zorg voor content <br/>(vraag & antwoord)</h2>
+                <ul>
+                    <li>Joomla Administrator > Inhoud > Categorieën
+                        <ul>
+                            <li>Nieuwe categorie 'veelgestelde-vragen'</li>
+                        </ul>
+                    </li>
+                    <li>Joomla Administrator > Inhoud > Artikelen
+                        <ul>
+                            <li>Per vraag een nieuw artikel</li>
+                            <li>Titel = vraag</li>
+                            <li>Body = antwoord</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Zorg voor content <br/>(vraag & antwoord)</h2>
+                <p>Robots = noindex, follow</p>
+                <p>Voorkom dat categorie en individuele artikelen indexeerbaar zijn.</p>
+            </section>
+
+            <section>
+                <p>Voorbeeld data vanuit joomla.org</p>
+                <img src="images/20210705-jug040/faq-structured-data--voorbeeld.png" width="800"/>
+            </section>
+
+            <section>
+                <p>Joomla com_content categorie</p>
+                <img src="images/20210705-jug040/faq-structured-data--voorbeeld-category.png" width="800"/>
+            </section>
+
+            <section>
+                <p>Joomla com_content artikelen</p>
+                <img src="images/20210705-jug040/faq-structured-data--voorbeeld-content.png" width="800"/>
+            </section>
+
+            <section>
+                <p>Joomla mod_articles_category</p>
+                <img src="images/20210705-jug040/faq-structured-data--mod_articles_category.png" width="800"/>
+            </section>
+
+            <section>
+                <p>Default weergave</p>
+                <img src="images/20210705-jug040/faq-structured-data--mod_articles_category-default.png" width="800"/>
+            </section>
+
+            <section>
+                <p>Alternate layout mod_articles_category/faq.php</p>
+                <pre><code>&lt;?php defined('_JEXEC') or die; ?&gt;
+&lt;div class="category-module-faq&lt;?php echo $moduleclass_sfx; ?&gt; mod-list"&gt;
+  &lt;?php foreach ($list as $item) : ?&gt;
+    &lt;details&gt;
+      &lt;summary&gt;
+        &lt;?php echo $item-&gt;title; ?&gt;
+      &lt;/summary&gt;
+      &lt;div class="details__content"&gt;
+        &lt;p class="mod-articles-category-introtext"&gt;
+          &lt;?php echo $item-&gt;introtext; ?&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/details&gt;
+  &lt;?php endforeach; ?&gt;
+&lt;/div&gt;</code></pre>
+            </section>
+
+            <section>
+                <p>Aangepaste weergave <code>&lt;details&gt;</code> & <code>&lt;summary&gt;</code></p>
+                <img src="images/20210705-jug040/faq-structured-data--mod_articles_category-aangepast.png" width="800"/>
+            </section>
+
+            <section>
+                <p>Voorbeeld code structured data FAQPage<br/>
+                    <a href="https://developers.google.com/search/docs/data-types/faqpage#examples" target="_blank">developer.google.com</a></p>
+                <pre><code>&lt;script type="application/ld+json"&gt;
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Wat is vraag 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "&lt;p&gt;Het antwoord &lt;/p&gt;"
+      }
+    }, {
+      "@type": "Question",
+      "name": "Wat is vraag 2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "&lt;p&gt;Het antwoord &lt;/p&gt;"
+      }
+    }
+  }
+&lt;script&gt;</code></pre>
+            </section>
+
+            <section>
+                <p>Alle informatie zit in een script tag van type JSON-LD</p>
+                <pre><code>&lt;script type="application/ld+json"&gt;
+    {
+    }
+&lt;/script&gt;</code></pre>
+            </section>
+
+            <section>
+                <p>Dan duidelijk maken wat we zijn en hoe we praten</p>
+                <pre><code>    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": []</code></pre>
+
+                <p>Meer info op <a href="https://schema.org/FAQPage" target="_blank">https://schema.org/FAQPage</a>
+                en <a href="https://developers.google.com/search/docs/data-types/faqpag" target="_blank">https://developers.google.com/search/docs/data-types/faqpag</a></p>
+            </section>
+
+            <section>
+                <p>Items toevoegen met vraag & antwoord</p>
+                <pre><code>{
+  "@type": "Question",
+  "name": "Staat hier een toffe vraag?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "&lt;p&gt;Maar natuurlijk... dit is het antwoord op de toffe vraag.&lt;/p&gt;"
+  }
+},</code></pre>
+                <p>Na de komma volgt weer een nieuwe vraag.</p>
+            </section>
+
+            <section>
+                <p>Alle informatie samen vormt dus...</p>
+                <pre><code>&lt;script type="application/ld+json"&gt;
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Wat is vraag 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "&lt;p&gt;Het antwoord &lt;/p&gt;"
+      }
+    }, {
+      "@type": "Question",
+      "name": "Wat is vraag 2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "&lt;p&gt;Het antwoord &lt;/p&gt;"
+      }
+    }
+  }
+&lt;script&gt;</code></pre>
+            </section>
+
+            <section>
+                <p>En dat in een JLayout in je template<br/>
+                html/data-type/faqpage.php</p>
+                <pre><code>&lt;?php defined('JPATH_BASE') or die;
+
+/** @var array $displayData */
+extract($displayData);
+
+if (!empty($displayData))
+{
+	$data = [
+		'@context'   => 'https://schema.org',
+		'@type'      => 'FAQPage',
+		'mainEntity' => [],
+	];
+
+	foreach ($displayData as $faq)
+	{
+	    $data['mainEntity'][] = [
+			'@type'          => 'Question',
+			'name'           => $faq->title,
+			'acceptedAnswer' => [
+				'@type' => 'Answer',
+				'text'  => htmlspecialchars_decode($faq->introtext)
+			]
+		];
+	}
+}
+?&gt;
+
+&lt;script type="application/ld+json"&gt;&lt;?php echo json_encode($data); ?&gt;&lt;/script&gt;</code></pre>
+            </section>
+
+            <section>
+                <p>Oproepen vanuit je mod_articles_category override</p>
+            </section>
+
+            <section>
+                <h2>oude situatie</h2>
+                <pre><code>&lt;?php defined('_JEXEC') or die; ?&gt;
+&lt;div class="category-module-faq&lt;?php echo $moduleclass_sfx; ?&gt; mod-list"&gt;
+  &lt;?php foreach ($list as $item) : ?&gt;
+    &lt;details&gt;
+      &lt;summary&gt;
+        &lt;?php echo $item-&gt;title; ?&gt;
+      &lt;/summary&gt;
+      &lt;div class="details__content"&gt;
+        &lt;p class="mod-articles-category-introtext"&gt;
+          &lt;?php echo $item-&gt;introtext; ?&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/details&gt;
+  &lt;?php endforeach; ?&gt;
+&lt;/div&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>nieuwe situatie</h2>
+                <pre><code>&lt;?php defined('_JEXEC') or die; ?&gt;
+use Joomla\CMS\Layout\LayoutHelper;
+
+echo LayoutHelper::render('data-type.faqpage', $list);
+&lt;div class="category-module-faq&lt;?php echo $moduleclass_sfx; ?&gt; mod-list"&gt;
+  &lt;?php foreach ($list as $item) : ?&gt;
+    &lt;details&gt;
+      &lt;summary&gt;
+        &lt;?php echo $item-&gt;title; ?&gt;
+      &lt;/summary&gt;
+      &lt;div class="details__content"&gt;
+        &lt;p class="mod-articles-category-introtext"&gt;
+          &lt;?php echo $item-&gt;introtext; ?&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/details&gt;
+  &lt;?php endforeach; ?&gt;
+&lt;/div&gt;</code></pre>
+            </section>
+
+            <section>
+                <p>Aan de buitenkant zie je geen verschil<br/>Onder de motorkap wel</p>
+                <img src="images/20210705-jug040/faq-structured-data--mod_articles_category-aangepast.png" width="800"/>
+            </section>
+
+        </section>
+
+        <section data-background-image="images/20210405-jug040/20200918_PC_PWT2015796736.jpg"></section>
+
+    </div>
+
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/zoom/zoom.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/search/search.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+
+</script>
+
+</body>
+</html>
