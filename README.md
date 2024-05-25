@@ -44,19 +44,6 @@ Hakim's open source work is supported by <a href="https://github.com/sponsors/ha
 - 🖌 [Try the visual editor for reveal.js at Slides.com](https://slides.com/)
 - 🎬 [Watch the reveal.js video course (paid)](https://revealjs.com/course)
 
-
-### My slides
-
-- [Layout Overrides in Child Themes - JDNL23 12-05-2023](./slides/20230512-jdnl23.html)
-- [Structured Data voor FAQ pagina - JUG040 5 juli 2021](./slides/20210705-jug040.html)
-- [RSForm!Pro submissions to Google Sheets - JUG040 07-06-2021](./slides/20210607-jug040.html)
-- [Google Analytics & Google Tag Manager - JUG040 05-04-2021](./slides/20210405-jug040.html)
-- [RSForm!Pro - meer dan een contactformulier - JUG073 11-03-2019](./slides/20190311-jug073.html)
-- [Template overrides - JUG073 05-02-2019](./slides/20190205-jug073.html)
-- [Joomla Content Editor - JUG073 08-10-2018](./slides/20181008-jug073.html)
-- [Maak je website sneller - JUG073 07-08-2018](./slides/20180807-jug073.html)
-
-
 --- 
 <div align="center">
   MIT licensed | Copyright © 2011-2024 Hakim El Hattab, https://hakim.se
