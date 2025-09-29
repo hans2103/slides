@@ -17,12 +17,12 @@
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #191919;
+$backgroundColor: hsl(209, 14%, 30%);
 
-$mainColor: #fff;
-$headingColor: #fff;
+$mainColor: hsl(0, 0%, 100%);
+$headingColor: hsl(0, 0%, 100%);
 
-$mainFontSize: 42px;
+$mainFontSize: 2.625rem;
 $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingTextShadow: none;
