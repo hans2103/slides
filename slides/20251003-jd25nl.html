@@ -1,500 +1,1176 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+    <title>JoomlaDagen 2025</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="Template Overrides in Joomla 5: Meer controle over je website">
+    <meta name="author" content="Hans Kuijpers">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="../dist/reset.css">
-		<link rel="stylesheet" href="../dist/reveal.css">
-		<link rel="stylesheet" href="../dist/theme/hkweb.css" id="theme">
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/hkweb.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
-	</head>
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<a href="https://revealjs.com">
-						<img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-					</a>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
-					</p>
-				</section>
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <a href="https://revealjs.com">
+                <img src="/slides/images/20251003-jdnl25/hkweb.svg" alt="reveal.js logo"
+                     style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <h3>Template Overrides in Joomla 5</h3>
+            <p>
+                Meer controle over je website<br/>
+                <small>Presentatie van <a href="https://hkweb.nl">Hans Kuijpers</a> - HKweb.nl</small>
+            </p>
+        </section>
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#/2/1" class="navigate-down">
-							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
-						</a>
-					</section>
-				</section>
+        <section style="text-align: left;">
+            <h2>Hans Kuijpers</h2>
+            <p>Happy Frontend Developer</p>
+            <ul>
+                <li>Tenor saxofoon</li>
+                <li>Carnaval in Oeteldonk</li>
+                <li>BBQ en lekker eten</li>
+                <li>Tango dansen</li>
+                <li>Joomla Gebruikersgroep Eindhoven - Online</li>
+            </ul>
+        </section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="https://slides.com" target="_blank">https://slides.com</a>.
-					</p>
-				</section>
+        <section>
+            <aside class="notes">
+                - Standaard gedrag van Joomla-componenten, modules en layouts kan aangepast worden zonder de
+                core-bestanden te wijzigen.<br>
+                - Voordelen: updates van Joomla blijven veilig, maatwerk is mogelijk.<br>
+                - Basisidee: een kopie van een view-bestand in je template-map plaatsen en aanpassen.<br>
+                - Benoem kort dat overrides bestaan voor componenten, modules, en layouts.
+            </aside>
 
-				<section data-visibility="hidden">
-					<h2>Hidden Slides</h2>
-					<p>
-						This slide is visible in the source, but hidden when the presentation is viewed. You can show all hidden slides by setting the `showHiddenSlides` config option to `true`.
-					</p>
-				</section>
-
-				<section data-auto-animate>
-					<h2 data-id="code-title">Pretty Code</h2>
-					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
-						import React, { useState } from 'react';
-
-						function Example() {
-						  const [count, setCount] = useState(0);
-
-						  return (
-						    ...
-						  );
-						}
+            <h3>Wat zijn template overrides?</h3>
+            <div class="fragment">
+                <p>van</p>
+                <pre data-id="code-animation"><code class="hljs php" data-trim>
+						/components/com_content/tmpl/article/default.php
 					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="https://highlightjs.org/usage/">highlight.js</a>.</p>
-				</section>
-
-				<section data-auto-animate>
-					<h2 data-id="code-title">With Animations</h2>
-					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|4,8-11|17|22-24"><script type="text/template">
-						import React, { useState } from 'react';
-
-						function Example() {
-						  const [count, setCount] = useState(0);
-
-						  return (
-						    <div>
-						      <p>You clicked {count} times</p>
-						      <button onClick={() => setCount(count + 1)}>
-						        Click me
-						      </button>
-						    </div>
-						  );
-						}
-
-						function SecondExample() {
-						  const [count, setCount] = useState(0);
-
-						  return (
-						    <div>
-						      <p>You clicked {count} times</p>
-						      <button onClick={() => setCount(count + 1)}>
-						        Click me
-						      </button>
-						    </div>
-						  );
-						}
-					</script></code></pre>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down the <strong>alt</strong> key (<strong>ctrl</strong> in Linux) and click on any element to zoom towards it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Click again to zoom back out.
-					</p>
-					<p>
-						(NOTE: Use ctrl + click in Linux.)
-					</p>
-				</section>
-
-				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-					<h2>Auto-Animate</h2>
-					<p>Automatically animate matching elements across slides with <a href="https://revealjs.com/auto-animate/">Auto-Animate</a>.</p>
-					<div class="r-hstack justify-center">
-						<div data-id="box1" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
-						<div data-id="box2" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
-						<div data-id="box3" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
-					</div>
-				</section>
-				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-					<div class="r-hstack justify-center">
-						<div data-id="box1" data-auto-animate-delay="0" style="background: cyan; width: 150px; height: 100px; margin: 10px;"></div>
-						<div data-id="box2" data-auto-animate-delay="0.1" style="background: magenta; width: 150px; height: 100px; margin: 10px;"></div>
-						<div data-id="box3" data-auto-animate-delay="0.2" style="background: yellow; width: 150px; height: 100px; margin: 10px;"></div>
-					</div>
-					<h2 style="margin-top: 20px;">Auto-Animate</h2>
-				</section>
-				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-					<div class="r-stack">
-						<div data-id="box1" style="background: cyan; width: 300px; height: 300px;"></div>
-						<div data-id="box2" style="background: magenta; width: 200px; height: 200px;"></div>
-						<div data-id="box3" style="background: yellow; width: 100px; height: 100px;"></div>
-					</div>
-					<h2 style="margin-top: 20px;">Auto-Animate</h2>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown Support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [docs](https://revealjs.com/markdown/).
-
-						```html []
-						<section data-markdown>
-						  ## Markdown Support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [docs](https://revealjs.com/markdown/).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<h2>Lightbox</h2>
-					Turn any element into a <a href="https://revealjs.com/lightbox/">lightbox</a> using <strong>data‑preview‑image</strong> & <strong>data‑preview‑video</strong>.
-					<div class="r-hstack" style="gap: 2rem;">
-						<div>
-							<pre style="font-size: 12px; width: 100%"><code class="html" data-trim>
-								&lt;img src="image.png" data-preview-image="image.png"&gt;
-							</code></pre>
-							<img src="https://static.slid.es/logo/v2/slides-symbol-1024x1024.png" height="100" data-preview-image>
-						</div>
-						<div>
-							<pre style="font-size: 12px; width: 100%"><code class="html" data-trim>
-								&lt;img src="video.png" data-preview-video="video.mp4"&gt;
-							</code></pre>
-							<img src="https://static.slid.es/site/homepage/v1/homepage-video-editor.png" height="100" data-preview-video="https://static.slid.es/site/homepage/v1/homepage-video-editor.mp4">
-						</div>
-					</div>
-				</section>
-
-				<section>
-					<p>Add the <code>r-fit-text</code> class to auto-size text</p>
-					<h2 class="r-fit-text">FIT TEXT</h2>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p>
-							<span style="display: inline-block;" class="fragment fade-right">fade-right, </span>
-							<span style="display: inline-block;" class="fragment fade-up">up, </span>
-							<span style="display: inline-block;" class="fragment fade-down">down, </span>
-							<span style="display: inline-block;" class="fragment fade-left">left</span>
-						</p>
-						<p class="fragment fade-in-then-out">fade-in-then-out</p>
-						<p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/white.css'); return false;">White</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/league.css'); return false;">League</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/sky.css'); return false;">Sky</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/beige.css'); return false;">Beige</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/serif.css'); return false;">Serif</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/blood.css'); return false;">Blood</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/night.css'); return false;">Night</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/moon.css'); return false;">Moon</a> -
-						<a href="#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)">
-						<h2>Gradient Backgrounds</h2>
-						<pre><code class="hljs html wrap">&lt;section data-background-gradient=
-							"linear-gradient(to bottom, #ddd, #191919)"&gt;</code></pre>
-					</section>
-					<section data-background="https://static.slid.es/reveal/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs html">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://static.slid.es/reveal/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://static.slid.es/site/homepage/v1/homepage-video-editor.mp4" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs javascript">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section data-background-iframe="https://hakim.se" data-background-interactive>
-					<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-						<h2>Iframe Backgrounds</h2>
-						<p>Since reveal.js runs on the web, you can easily embed other web content. Try interacting with the page in the background.</p>
-					</div>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://revealjs.com/speaker-view/">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://revealjs.com/pdf-export/">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.on( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
+                <p>naar</p>
+                <pre data-id="code-animation"><code class="hljs php" data-trim>
+						/templates/[jouw-template]/html/com_content/article/default.php
 					</code></pre>
-				</section>
+            </div>
+        </section>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
+        <section>
+            <h3>Hoe werken template overrides?</h3>
+            <ul>
+                <li>Zoek origineel bestand</li>
+                <li>Kopieer naar jouw template</li>
+                <li>Pas aan naar behoefte</li>
+            </ul>
+        </section>
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://revealjs.com/api/">Extensive JavaScript API</a></li>
-						<li><a href="https://revealjs.com/auto-slide/">Auto-progression</a></li>
-						<li><a href="https://revealjs.com/backgrounds/#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://revealjs.com/keyboard/">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.20.44.png"></section>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.20.54.png"></section>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.17.12.png"></section>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.23.50.png"></section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="https://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
+        <section data-auto-animate>
+            <h2 data-id="code-title">Origneel</h2>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="2">&lt;?php if ($params->get('show_title')) : ?&gt;
+    &lt;div class="page-header"&gt;
+        &lt;&lt;?php echo $htag; ?&gt;&gt;
+        &lt;?php echo $this-&gt;escape($this-&gt;item-&gt;title); ?&gt;
+    &lt;/&lt;?php echo $htag; ?&gt;&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.39.24.png" alt=""/>
+        </section>
 
-			</div>
+        <section data-auto-animate>
+            <h2 data-id="code-title">Aangepast</h2>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="2">&lt;?php if ($params->get('show_title')) : ?&gt;
+    &lt;div class="page-header text-uppercase"&gt;
+        &lt;&lt;?php echo $htag; ?&gt;&gt;
+        &lt;?php echo $this-&gt;escape($this-&gt;item-&gt;title); ?&gt;
+    &lt;/&lt;?php echo $htag; ?&gt;&gt;</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.39.40.png" alt=""/>
+        </section>
 
-		</div>
+        <section data-auto-animate>
+            <h2 data-id="code-title">Aangepast</h2>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="4,5">&lt;?php if ($params->get('show_title')) : ?&gt;
+    &lt;div class="page-header text-uppercase"&gt;
+        &lt;&lt;?php echo $htag; ?&gt;&gt;
+        &lt;?php echo $this-&gt;escape($this-&gt;item-&gt;title
+                . ' ' . $user->name); ?&gt;
+    &lt;/&lt;?php echo $htag; ?&gt;&gt;</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.42.38.png" alt=""/>
+        </section>
 
-		<script src="../dist/reveal.js"></script>
-		<script src="../plugin/zoom/zoom.js"></script>
-		<script src="../plugin/notes/notes.js"></script>
-		<script src="../plugin/search/search.js"></script>
-		<script src="../plugin/markdown/markdown.js"></script>
-		<script src="../plugin/highlight/highlight.js"></script>
-		<script>
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_users submit button</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="3">
+&lt;div class="com-users-login__submit control-group"&gt;
+    &lt;div class="controls"&gt;
+        &lt;button type="submit" class="btn btn-primary"&gt;
+            &lt;?php echo Text::_('JLOGIN'); ?&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.54.12.png" alt=""/>
+        </section>
 
-			// Also available as an ES module, see:
-			// https://revealjs.com/initialization/
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				center: true,
-				hash: true,
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_users submit button</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="3">
+&lt;div class="com-users-login__submit control-group"&gt;
+    &lt;div class="controls"&gt;
+        &lt;button type="submit" class="btn btn-primary w-100"&gt;
+            &lt;?php echo Text::_('JLOGIN'); ?&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.54.31.png" alt=""/>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
-			});
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_users submit button</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="4">
+&lt;div class="com-users-login__submit control-group"&gt;
+    &lt;div class="controls"&gt;
+        &lt;button type="submit" class="btn btn-primary w-100"&gt;
+            &lt;?php echo Text::_('JLOGIN'); ?&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.54.31.png" alt=""/>
+        </section>
 
-		</script>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.59.38.png"></section>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 11.59.47.png"></section>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 12.00.11.png"></section>
 
-	</body>
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_users submit button</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="5">
+&lt;div class="com-users-login__submit control-group"&gt;
+    &lt;div class="controls"&gt;
+        &lt;button type="submit" class="btn btn-primary w-100"&gt;
+            &lt;?php echo Text::_('JLOGIN'); ?&gt;
+            &lt;?php echo Text::_('BLA'); ?&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 12.59.26.png" alt=""/>
+        </section>
+
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.00.05.png"></section>
+
+        <section>
+            <h2>Custom Fields</h2>
+            <p>Plaatsen waar jij dat wil,</p>
+            <p>niet waar Joomla ze plaatst.</p>
+        </section>
+
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.17.40.png"></section>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.16.40.png"></section>
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.25.28.png"></section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="5">
+&lt;div class="com-content-article__body"&gt;
+    &lt;?php echo $this->item->text; ?&gt;
+&lt;/div&gt;</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.29.25.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="3">
+&lt;div class="com-content-article__body"&gt;
+    &lt;?php echo $this->item->text; ?&gt;
+    &lt;p&gt;Hier moet de Custom Field "About the author" geplaatst worden.&lt;/p&gt;
+&lt;/div&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.29.43.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="4-6">
+&lt;div class="com-content-article__body"&gt;
+    &lt;?php echo $this->item->text; ?&gt;
+    &lt;p&gt;Hier moet de Custom Field "About the author" geplaatst worden.&lt;/p&gt;
+    &lt;pre&gt;
+        &lt;?php var_dump($this->item->jcfields); ?&gt;
+    &lt;/pre&gt;
+&lt;/div&gt;
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h2 data-id="code-title">koning var_dump()</h2>
+            <pre data-id="code-animation"><code class="hljs stylus" data-trim>
+array(1) {
+  [1]=>object(stdClass)#1217 (33) {
+    ["id"]=>int(1)
+    ["title"]=>string(16) "About the Author"
+    ["name"]=>string(16) "about-the-author"
+    ["checked_out"]=>NULL
+    ["checked_out_time"]=>NULL
+    ["note"]=>string(0) ""
+    ["state"]=>int(1)
+    ["access"]=>int(1)
+    ["created_time"]=>string(19) "2025-09-23 17:11:48"
+    ["created_user_id"]=>int(821)
+    ["ordering"]=>int(0)
+    ["language"]=>string(1) "*"
+    ["fieldparams"]=>object(Joomla\Registry\Registry)#1078 (3) {
+      ["data": protected]=>object(stdClass)#1115 (4) {
+        ["rows"]=>int(3)
+        ["cols"]=>int(80)
+        ["maxlength"]=>int(400)
+        ["filter"]=>string(0) ""
+      }
+    ["initialized": protected]=>bool(true)
+    ["separator": protected]=>string(1) "."
+  }
+  ["params"]=>object(Joomla\Registry\Registry)#1117 (3) {
+    ["data": protected]=>object(stdClass)#1113 (15) {
+      ["hint"]=>string(0) ""
+      ["class"]=>string(0) ""
+      ["label_class"]=>string(0) ""
+      ["show_on"]=>string(0) ""
+      ["showon"]=>string(0) ""
+      ["render_class"]=>string(0) ""
+      ["value_render_class"]=>string(0) ""
+      ["showlabel"]=>string(1) "1"
+      ["label_render_class"]=>string(0) ""
+      ["display"]=>string(1) "0"
+      ["prefix"]=>string(0) ""
+      ["suffix"]=>string(0) ""
+      ["layout"]=>string(0) ""
+      ["display_readonly"]=>string(1) "2"
+      ["searchindex"]=>string(1) "0"
+    }
+    ["initialized": protected]=>bool(true)
+    ["separator": protected]=>string(1) "."
+  }
+  ["type"]=>string(8) "textarea"
+  ["default_value"]=>string(0) ""
+  ["context"]=>string(19) "com_content.article"
+  ["group_id"]=>int(1)
+  ["label"]=>string(16) "About the Author"
+  ["description"]=>string(0) ""
+  ["required"]=>int(0)
+  ["only_use_in_subform"]=>int(0)
+  ["language_title"]=>NULL
+  ["language_image"]=>NULL
+  ["editor"]=>NULL
+  ["access_level"]=>string(6) "Public"
+  ["author_name"]=>string(13) "Hans Kuijpers"
+  ["group_title"]=>string(10) "The Author"
+  ["group_access"]=>int(1)
+  ["group_state"]=>int(1)
+  ["group_note"]=>string(0) ""
+  ["value"]=>string(152) "Uurnip greens yarrow ricebean endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale."
+  ["rawvalue"]=>string(152) "Uurnip greens yarrow ricebean endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale."
+  }
+}
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="5">
+&lt;div class="com-content-article__body"&gt;
+    &lt;?php echo $this->item->text; ?&gt;
+    &lt;p&gt;Hier moet de Custom Field "About the author" geplaatst worden.&lt;/p&gt;
+    &lt;pre&gt;
+        &lt;?php var_dump($this->item->jcfields[1]); ?&gt;
+    &lt;/pre&gt;
+&lt;/div&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.53.47.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h2 data-id="code-title">koning var_dump()</h2>
+            <pre data-id="code-animation"><code class="hljs stylus" data-trim>
+  object(stdClass)#1217 (33) {
+    ["id"]=>int(1)
+    ["title"]=>string(16) "About the Author"
+    ["name"]=>string(16) "about-the-author"
+    ["checked_out"]=>NULL
+    ["checked_out_time"]=>NULL
+    ["note"]=>string(0) ""
+    ["state"]=>int(1)
+    ["access"]=>int(1)
+    ["created_time"]=>string(19) "2025-09-23 17:11:48"
+    ["created_user_id"]=>int(821)
+    ["ordering"]=>int(0)
+    ["language"]=>string(1) "*"
+    ["fieldparams"]=>object(Joomla\Registry\Registry)#1078 (3) {
+      ["data": protected]=>object(stdClass)#1115 (4) {
+        ["rows"]=>int(3)
+        ["cols"]=>int(80)
+        ["maxlength"]=>int(400)
+        ["filter"]=>string(0) ""
+      }
+    ["initialized": protected]=>bool(true)
+    ["separator": protected]=>string(1) "."
+  }
+  ["params"]=>object(Joomla\Registry\Registry)#1117 (3) {
+    ["data": protected]=>object(stdClass)#1113 (15) {
+      ["hint"]=>string(0) ""
+      ["class"]=>string(0) ""
+      ["label_class"]=>string(0) ""
+      ["show_on"]=>string(0) ""
+      ["showon"]=>string(0) ""
+      ["render_class"]=>string(0) ""
+      ["value_render_class"]=>string(0) ""
+      ["showlabel"]=>string(1) "1"
+      ["label_render_class"]=>string(0) ""
+      ["display"]=>string(1) "0"
+      ["prefix"]=>string(0) ""
+      ["suffix"]=>string(0) ""
+      ["layout"]=>string(0) ""
+      ["display_readonly"]=>string(1) "2"
+      ["searchindex"]=>string(1) "0"
+    }
+    ["initialized": protected]=>bool(true)
+    ["separator": protected]=>string(1) "."
+  }
+  ["type"]=>string(8) "textarea"
+  ["default_value"]=>string(0) ""
+  ["context"]=>string(19) "com_content.article"
+  ["group_id"]=>int(1)
+  ["label"]=>string(16) "About the Author"
+  ["description"]=>string(0) ""
+  ["required"]=>int(0)
+  ["only_use_in_subform"]=>int(0)
+  ["language_title"]=>NULL
+  ["language_image"]=>NULL
+  ["editor"]=>NULL
+  ["access_level"]=>string(6) "Public"
+  ["author_name"]=>string(13) "Hans Kuijpers"
+  ["group_title"]=>string(10) "The Author"
+  ["group_access"]=>int(1)
+  ["group_state"]=>int(1)
+  ["group_note"]=>string(0) ""
+  ["value"]=>string(152) "Uurnip greens yarrow ricebean endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale."
+  ["rawvalue"]=>string(152) "Uurnip greens yarrow ricebean endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale."
+  }
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="5,6">
+&lt;div class="com-content-article__body"&gt;
+    &lt;?php echo $this->item->text; ?&gt;
+    &lt;p&gt;Hier moet de Custom Field "About the author" geplaatst worden.&lt;/p&gt;
+    &lt;pre&gt;
+        &lt;?php var_dump($this->item->jcfields[1]->title); ?&gt;
+        &lt;?php var_dump($this->item->jcfields[1]->rawvalue); ?&gt;
+    &lt;/pre&gt;
+&lt;/div&gt;
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h2 data-id="code-title">koning var_dump()</h2>
+            <pre data-id="code-animation"><code class="hljs stylus" data-trim>
+        string(16) "About the Author"
+        string(152) "Uurnip greens yarrow ricebean endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale."
+        </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="4-6">
+&lt;div class="com-content-article__body"&gt;
+    &lt;?php echo $this->item->text; ?&gt;
+    &lt;p&gt;Hier moet de Custom Field "About the author" geplaatst worden.&lt;/p&gt;
+    &lt;?php if (!empty($this->item->jcfields[1]->rawvalue)): ?&gt;
+        &lt;?php echo $this->item->jcfields[1]->title . ": " . $this->item->jcfields[1]->rawvalue; ?&gt;
+    &lt;?php endif; ?&gt;
+&lt;/div&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.48.23.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers>
+&lt;div class="com-content-article__body"&gt;
+    &lt;?php echo $this->item->text; ?&gt;
+    &lt;?php if (!empty($this->item->jcfields[1]->rawvalue)): ?&gt;
+        &lt;?php echo $this->item->jcfields[1]->title . ": " . $this->item->jcfields[1]->rawvalue; ?&gt;
+    &lt;?php endif; ?&gt;
+&lt;/div&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 13.51.49.png" alt=""/>
+        </section>
+
+        <section>
+            <h2>JLayout</h2>
+            <p>Bestanden met herbruikbare code toegepast op verschillende plekken in Joomla.</p>
+        </section>
+
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 14.14.28.png"></section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="2">
+&lt;?php if ($useDefList && ($info == 0 || $info == 2)) : ?&gt;
+    &lt;?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'above']); ?&gt;
+&lt;?php endif; ?&gt;
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">com_content article</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="2">
+&lt;?php if ($useDefList && ($info == 0 || $info == 2)) : ?&gt;
+    &lt;?php echo LayoutHelper::debug('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'above']); ?&gt;
+&lt;?php endif; ?&gt;
+            </code></pre>
+            <pre data-id="code-animation"><code class="hljs stylus" data-trim>
+Layout: joomla.content.info_block
+Include Paths: Array
+(
+    [0] => /templates/cassiopeia_child/html/layouts/com_content
+    [1] => /templates/cassiopeia/html/layouts/com_content
+    [2] => /components/com_content/layouts
+    [3] => /templates/cassiopeia_child/html/layouts
+    [4] => /templates/cassiopeia/html/layouts
+    [5] => /layouts
+)
+Searching layout for: joomla/content/info_block.php
+Found layout: /layouts/joomla/content/info_block.php
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Ook hiervoor geldt</h3>
+            <ul>
+                <li>Zoek origineel bestand</li>
+                <li>Kopieer naar jouw template</li>
+                <li>Pas aan naar behoefte</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Override info_block.php</h2>
+            <p>van</p>
+            <pre data-id="code-animation"><code class="hljs php" data-trim>
+/layouts/joomla/content/info_block.php
+            </code></pre>
+            <p>naar</p>
+            <pre data-id="code-animation"><code class="hljs php" data-trim>
+/templates/cassiopeia_child/html/layouts/joomla/content/info_block.php
+			</code></pre>
+        </section>
+
+        <section>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="34-36">
+&lt;?php
+
+/**
+ * @package     Joomla.Site
+ * @subpackage  Layout
+ *
+ * @copyright   (C) 2017 Open Source Matters, Inc. &lt;https://www.joomla.org&gt;
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+
+use Joomla\CMS\Language\Text;
+
+$blockPosition = $displayData['params']-&gt;get('info_block_position', 0);
+
+?&gt;
+&lt;dl class="article-info text-muted"&gt;
+
+&lt;?php if (
+        $displayData['position'] === 'above' && ($blockPosition == 0 || $blockPosition == 2)
+        || $displayData['position'] === 'below' && ($blockPosition == 1)
+    ) : ?&gt;
+    &lt;dt class="article-info-term"&gt;
+        &lt;?php if (!$displayData['params']-&gt;get('info_block_show_title', 1)) : ?&gt;
+        &lt;?php echo '&lt;span class="visually-hidden"&gt;'; ?&gt;
+        &lt;?php endif; ?&gt;
+        &lt;?php echo Text::_('COM_CONTENT_ARTICLE_INFO'); ?&gt;
+        &lt;?php if (!$displayData['params']-&gt;get('info_block_show_title', 1)) : ?&gt;
+        &lt;?php echo '&lt;/span&gt;'; ?&gt;
+        &lt;?php endif; ?&gt;
+    &lt;/dt&gt;
+
+    &lt;?php if ($displayData['params']-&gt;get('show_author') && !empty($displayData['item']-&gt;author)) : ?&gt;
+    &lt;?php echo $this-&gt;sublayout('author', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ($displayData['params']-&gt;get('show_parent_category') && !empty($displayData['item']-&gt;parent_id)) : ?&gt;
+    &lt;?php echo $this-&gt;sublayout('parent_category', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ($displayData['params']-&gt;get('show_category')) : ?&gt;
+    &lt;?php echo $this-&gt;sublayout('category', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ($displayData['params']-&gt;get('show_associations')) : ?&gt;
+    &lt;?php echo $this-&gt;sublayout('associations', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ($displayData['params']-&gt;get('show_publish_date')) : ?&gt;
+    &lt;?php echo $this-&gt;sublayout('publish_date', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php endif; ?&gt;
+
+    &lt;?php
+if (
+$displayData['position'] === 'above' && ($blockPosition == 0)
+|| $displayData['position'] === 'below' && ($blockPosition == 1 || $blockPosition == 2)
+) : ?&gt;
+    &lt;?php if ($displayData['params']-&gt;get('show_create_date')) : ?&gt;
+    &lt;?php echo $this-&gt;sublayout('create_date', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ($displayData['params']-&gt;get('show_modify_date')) : ?&gt;
+    &lt;?php echo $this-&gt;sublayout('modify_date', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ($displayData['params']-&gt;get('show_hits')) : ?&gt;
+    &lt;?php echo $this-&gt;sublayout('hits', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+    &lt;?php endif; ?&gt;
+&lt;/dl&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 14.27.37.png" alt=""/>
+        </section>
+
+        <section>
+            <h2>Override info_block/author.php</h2>
+            <p>van</p>
+            <pre data-id="code-animation"><code class="hljs php" data-trim>
+/layouts/joomla/content/info_block/author.php
+            </code></pre>
+            <p>naar</p>
+            <pre data-id="code-animation"><code class="hljs php" data-trim>
+/templates/cassiopeia_child/html/layouts/joomla/content/info_block/author.php
+			</code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">JLayout joomla.info_block.author</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="2">
+&lt;dd class="createdby"&gt;
+    &lt;span class="icon-user icon-fw" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;?php $author = ($displayData['item']->created_by_alias ?: $displayData['item']->author); ?&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 14.41.56.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">JLayout joomla.info_block.author</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="2">
+&lt;dd class="createdby"&gt;
+    &lt;span class="icon-pencil-2 icon-fw" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;?php $author = ($displayData['item']->created_by_alias ?: $displayData['item']->author); ?&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 14.43.51.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">JLayout joomla.info_block.unicorn</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="3">
+    &lt;?php endif; ?&gt;
+
+    &lt;?php echo $this->sublayout('unicorn', $displayData); ?&gt;
+&lt;/dl&gt;
+            </code></pre>
+            <p>Maak een unicorn.php aan in</p>
+            <pre data-id="code-animation"><code class="hljs php" data-trim>
+/templates/cassiopeia_child/html/layouts/joomla/content/info_block/unicorn.php
+			</code></pre>
+        </section>
+
+        <section>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="3-6">
+...
+?&gt;
+&lt;dd class="unicorn"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon-fw" aria-hidden="true"&gt;&lt;!--!Font Awesome Pro v5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.--&gt;&lt;path d="M631.98 32H531.73c5.93-6.14 10.4-13.63 12.18-22.36 1.01-4.96-2.88-9.64-7.94-9.64H416c-70.69 0-128 57.31-128 128H160c-28.84 0-54.4 12.98-72 33.11V160c-48.53 0-88 39.47-88 88v56c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-56c0-13.22 6.87-24.39 16.78-31.68-.21 2.58-.78 5.05-.78 7.68 0 27.64 11.84 52.36 30.54 69.88l-25.72 68.6a63.945 63.945 0 0 0-2.16 37.99l24.85 99.41A15.982 15.982 0 0 0 107.02 512h65.96c10.41 0 18.05-9.78 15.52-19.88l-26.31-105.26 23.84-63.59 102.04 22.33V496c0 8.84 7.16 16 16 16h64c8.84 0 16-7.16 16-16V318.22c19.74-20.19 32-47.75 32-78.22 0-.22-.07-.42-.08-.64V136.89l16 7.11 18.9 37.7c7.45 14.87 25.05 21.55 40.49 15.37l32.55-13.02a31.997 31.997 0 0 0 20.12-29.74L544 83.3l92.42-36.65c6.59-4.38 3.48-14.65-4.44-14.65zM480 96c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16z"/&gt;&lt;/svg&gt;
+    &lt;?php echo Text::_('I_AM_A_UNICORN'); ?&gt;
+&lt;/dd&gt;
+ 			</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 14.56.28.png" alt=""/>
+        </section>
+
+        <section>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="5">
+...
+?&gt;
+&lt;dd class="unicorn"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon-fw" aria-hidden="true"&gt;&lt;!--!Font Awesome Pro v5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.--&gt;&lt;path d="M631.98 32H531.73c5.93-6.14 10.4-13.63 12.18-22.36 1.01-4.96-2.88-9.64-7.94-9.64H416c-70.69 0-128 57.31-128 128H160c-28.84 0-54.4 12.98-72 33.11V160c-48.53 0-88 39.47-88 88v56c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-56c0-13.22 6.87-24.39 16.78-31.68-.21 2.58-.78 5.05-.78 7.68 0 27.64 11.84 52.36 30.54 69.88l-25.72 68.6a63.945 63.945 0 0 0-2.16 37.99l24.85 99.41A15.982 15.982 0 0 0 107.02 512h65.96c10.41 0 18.05-9.78 15.52-19.88l-26.31-105.26 23.84-63.59 102.04 22.33V496c0 8.84 7.16 16 16 16h64c8.84 0 16-7.16 16-16V318.22c19.74-20.19 32-47.75 32-78.22 0-.22-.07-.42-.08-.64V136.89l16 7.11 18.9 37.7c7.45 14.87 25.05 21.55 40.49 15.37l32.55-13.02a31.997 31.997 0 0 0 20.12-29.74L544 83.3l92.42-36.65c6.59-4.38 3.48-14.65-4.44-14.65zM480 96c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16z"/&gt;&lt;/svg&gt;
+    &lt;?php echo Text::_('I_AM_A_UNICORN'); ?&gt;
+&lt;/dd&gt;
+ 			</code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 14.58.33.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">language/overrides/nl-NL.override.ini</h3>
+            <pre data-id="code-animation"><code class="hljs stylus" data-trim data-line-numbers="3">
+JLOGIN="Treed binnen"
+BLA="Waterfiets"
+I_AM_A_UNICORN="Ik ben een eenhoorn"
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 14.58.33.png" alt=""/>
+        </section>
+
+        <section>
+            <h2>Custom Field en JLayout</h2>
+            <p>Gebruik te waarde van een Custom Field om een JLayout te tonen</p>
+            <p>Niet iedereen is een Eenhoorn</p>
+        </section>
+
+        <section data-background-image="images/20251003-jdnl25/Screenshot 2025-10-01 at 15.04.34.png"></section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">JLayout joomla.info_block</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="2-4">
+    &lt;?php endif; ?&gt;
+    &lt;pre&gt;
+        &lt;?php var_dump($displayData['item']->jcfields[2]->rawvalue); ?&gt;
+    &lt;/pre&gt;
+    &lt;?php echo $this->sublayout('unicorn', $displayData); ?&gt;
+&lt;/dl&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 15.08.07.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h3 data-id="code-title">JLayout joomla.info_block</h3>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="1,3">
+    &lt;?php if ($displayData['item']->jcfields[2]->rawvalue === 'yes'): ?&gt;
+        &lt;?php echo $this->sublayout('unicorn', $displayData); ?&gt;
+    &lt;?php endif; ?&gt;
+&lt;/dl&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-01 at 15.12.57.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h2>Alternate layout, Module overrides en JLayout</h2>
+        </section>
+
+        <section data-auto-animate>
+            <h2>Alternate layout?</h2>
+            <div class="fragment">
+                <p>van</p>
+                <pre data-id="code-animation"><code class="hljs php" data-trim>
+						/components/com_content/tmpl/category/blog.php
+						/components/com_content/tmpl/category/blog.xml
+					</code></pre>
+                <p>naar</p>
+                <pre data-id="code-animation"><code class="hljs php" data-trim>
+						/templates/cassiopeia_child/html/com_content/category/advent.php
+						/templates/cassiopeia_child/html/com_content/category/advent.xml
+					</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h3>Hoe werken alternate layout?</h3>
+            <ul>
+                <li>Zoek origineel bestand</li>
+                <li>Kopieer met een nieuwe naam naar jouw template</li>
+                <li>Pas aan naar behoefte</li>
+                <li>Maak menu item naar nieuwe layout</li>
+            </ul>
+        </section>
+
+        <section data-auto-animate>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-02 at 15.16.13.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h2>Category Blog / Advent <br>en <br>Mod Articles / Advent</h2>
+            <p class="fragment">en JLayouts</p>
+        </section>
+
+        <section data-auto-animate>
+            <h4 data-id="code-title">com_content/category/advent.xml</h4>
+            <pre data-id="code-animation"><code class="hljs xml" data-trim data-line-numbers="3">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;metadata&gt;
+	&lt;layout title="advent" option="COM_CONTENT_CATEGORY_VIEW_BLOG_OPTION"&gt;
+		&lt;help key = "Menu_Item:_Category_Blog" /&gt;
+		&lt;message&gt;
+			&lt;![CDATA[COM_CONTENT_CATEGORY_VIEW_BLOG_DESC]]&gt;
+            </code></pre>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-02 at 15.32.32.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h4 data-id="code-title">com_content/category/advent.php</h4>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="19-25">
+&lt;?php
+
+/**
+ * @package         Joomla.Site
+ * @subpackage      com_content
+ *
+ * @copyright   (C) 2006 Open Source Matters, Inc. &lt;https://www.joomla.org&gt;
+ * @license         GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+use Joomla\CMS\Layout\LayoutHelper;
+
+defined('_JEXEC') or die;
+
+if (!$this->items):
+    return;
+endif;
+
+echo LayoutHelper::render('template.advent.calendar',
+    [
+        'id'         => 'com' . $this->category->id,
+        'items'      => $this->items,
+        'background' => $this->category->getParams()->get('image') ?? false
+    ]
+);
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h4 data-id="code-title">layouts/template/advent/calendar.php</h4>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers>
+&lt;?php
+
+/**
+ * @package         Joomla.Site
+ * @subpackage      com_content
+ *
+ * @copyright   (C) 2006 Open Source Matters, Inc. &lt;https://www.joomla.org&gt;
+ * @license         GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+
+use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\Utilities\ArrayHelper;
+
+if (!$displayData['items']) :
+    return;
+endif;
+
+$wa = Factory::getApplication()-&gt;getDocument()-&gt;getWebAssetManager();
+$wa-&gt;useScript('joomla.dialog-autocreate');
+
+$comId      = 'com-adventcalendar-' . $displayData['id'];
+$today      = Factory::getDate()-&gt;format('Y-m-d');
+$showNumber = false;
+
+$sorted = $displayData['items'];
+usort($sorted, function ($a, $b) {
+    return strtotime($a-&gt;created) - strtotime($b-&gt;created);
+});
+
+$orderMap = [];
+foreach ($sorted as $index =&gt; $item)
+{
+    $orderMap[$item-&gt;id] = $index + 1;
+}
+
+foreach ($this-&gt;items as $key =&gt; $item)
+{
+    $item-&gt;number     = $orderMap[$item-&gt;id];
+    $item-&gt;showNumber = $showNumber;
+}
+
+if ($displayData['background'])
+{
+    $wa-&gt;addInlineStyle(
+        '#' . $comId . '{background-image: url("' . $displayData['background'] . '");}', ['name' =&gt; $comId]);
+}
+
+?&gt;
+&lt;ul id="&lt;?php echo $comId; ?&gt;" class="com-adventcalendar"&gt;
+    &lt;?php foreach ($displayData['items'] as $item) : ?&gt;
+        &lt;li&gt;
+            &lt;?php $class = 'com-adventcalendar__button'; ?&gt;
+            &lt;?php $canOpen = date('Y-m-d', strtotime($item-&gt;created)) &lt;= $today; ?&gt;
+            &lt;?php $popupOptions = [
+                'popupType'  =&gt; 'inline',
+                'className'  =&gt; 'dialog-adventcalendar',
+                'src'        =&gt; '#com-adventcalendar-dialog-' . $item-&gt;id . $comId,
+                'textHeader' =&gt; HTMLHelper::_('date', $item-&gt;created, Text::_('DATE_FORMAT_LC3')) . ' - ' . $item-&gt;title,
+                'width'      =&gt; 'fit-content'
+            ]; ?&gt;
+            &lt;?php $attribs = [
+                'type'               =&gt; 'button',
+                'data-joomla-dialog' =&gt; htmlspecialchars(json_encode($popupOptions, JSON_UNESCAPED_SLASHES)),
+                'aria-label'         =&gt; $item-&gt;title,
+                'id'                 =&gt; 'title-' . $item-&gt;id . $comId,
+                'data-module-id'     =&gt; $item-&gt;id,
+                'class'              =&gt; $class
+            ]; ?&gt;
+
+            &lt;?php $buttonElem = $canOpen ? 'button' : 'span'; ?&gt;
+            &lt;?php $buttonAttribs = $canOpen ? $attribs : ['class' =&gt; $class]; ?&gt;
+
+            &lt;?php $number = [
+                '&lt;span class="com-adventcalendar__number"&gt;',
+                $item-&gt;number,
+                '&lt;/span&gt;',
+            ]; ?&gt;
+            &lt;?php if (!$item-&gt;showNumber) : ?&gt;
+                &lt;?php $date = new \DateTime($item-&gt;created); ?&gt;
+                &lt;?php $number = [
+                    '&lt;time datetime="' . $date-&gt;format('Y-m-d') . '" class="com-adventcalendar__date"&gt;',
+                    '&lt;span&gt;' . $date-&gt;format('j') . '&lt;/span&gt;',
+                    '&lt;span&gt;' . $date-&gt;format('F') . '&lt;/span&gt;',
+                    '&lt;/time&gt;',
+                ]; ?&gt;
+            &lt;?php endif; ?&gt;
+
+            &lt;?php $lock = $canOpen ? '' : LayoutHelper::render('joomla.icon.iconclass', ['icon' =&gt; 'fa-solid fa-lock']); ?&gt;
+
+            &lt;?php echo '&lt;' . $buttonElem . ' ' . ArrayHelper::toString($buttonAttribs) . '&gt;'; ?&gt;
+            &lt;?php echo '&lt;div class="com-adventcalendar__cover"&gt;' . implode('', $number) . '&lt;/div&gt;'; ?&gt;
+            &lt;?php echo $lock; ?&gt;
+            &lt;?php echo '&lt;/' . $buttonElem . '&gt;'; ?&gt;
+
+            &lt;?php if ($canOpen) : ?&gt;
+                &lt;?php $images = json_decode($item-&gt;images); ?&gt;
+                &lt;template id="com-adventcalendar-dialog-&lt;?php echo $item-&gt;id . $comId; ?&gt;"&gt;
+                    &lt;div class="com-adventcalendar__dialog"&gt;
+                        &lt;?php if (!empty($images-&gt;image_fulltext)): ?&gt;
+                            &lt;figure&gt;
+                                &lt;?php echo HTMLHelper::_('image', $images-&gt;image_fulltext, $images-&gt;image_fulltext_alt ?? ''); ?&gt;
+                            &lt;/figure&gt;
+                        &lt;?php endif; ?&gt;
+                        &lt;h2&gt;&lt;?php echo $item-&gt;title; ?&gt;&lt;/h2&gt;
+                        &lt;?php echo $item-&gt;introtext; ?&gt;
+                    &lt;/div&gt;
+                &lt;/template&gt;
+            &lt;?php endif; ?&gt;
+        &lt;/li&gt;
+    &lt;?php endforeach; ?&gt;
+&lt;/ul&gt;
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h4 data-id="code-title">media...cassiopeia_child/css/user.css</h4>
+            <pre data-id="code-animation"><code class="hljs css" data-trim data-line-numbers>
+.com-adventcalendar {
+  --adv-grid-min-col-size: 9rem;
+  --adv-tile-bg-color: hsl(0deg 0% 100% / 0.125);
+  --adv-tile-border-color: hsl(0deg 0% 80%);
+  --adv-span-text-shadow: 0 0 0.2rem hsl(0deg 0% 0%), 0 0 0.5rem hsl(0deg 0% 0%);
+  --adv-tile-text-color: hsl(0deg 0% 100%);
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(var(--adv-grid-min-col-size), 100%), 1fr)
+  );
+  gap: 1rem;
+  list-style-type: none;
+  padding: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    color: var(--adv-tile-text-color);
+    background-color: var(--adv-tile-bg-color);
+    border: 1px solid var(--adv-tile-border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem hsl(0deg 0% 0%);
+    transition: all 0.2s ease-in-out;
+
+    &:not(:has([aria-hidden="true"])) {
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 1rem hsl(0deg 0% 0%);
+        transform: scale(1.025);
+      }
+    }
+  }
+}
+
+.com-adventcalendar__button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 0;
+  font-size: 4rem;
+  text-shadow: var(--adv-span-text-shadow);
+  color: inherit;
+  text-decoration: none;
+  background-color: inherit;
+  border-radius: inherit;
+
+  [type="button"] {
+    cursor: pointer;
+  }
+
+  [aria-hidden="true"] {
+    position: absolute;
+    inset-inline-end: 0.5rem;
+    inset-block-end: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+.com-adventcalendar-background {
+  --adv-tile-bg-color: transparent;
+
+  padding: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+body:has(.dialog-adventcalendar.loaded) {
+  overflow-y: hidden;
+}
+
+
+.com-adventcalendar__cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.com-adventcalendar__date {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-self: flex-end;
+  justify-self: flex-start;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: .5em;
+
+  & > :first-child {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+}
+
+.com-adventcalendar__dialog {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  padding: 1.5rem;
+
+  & > * {
+    margin-block-end: unset;
+  }
+
+  & > * + * {
+    margin-block-start: .75em;
+  }
+
+  p,
+  ul,
+  ol,
+  li {
+    &:not([class]) {
+      max-width: 60ch;
+    }
+  }
+}
+        </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-02 at 15.45.39.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-02 at 15.45.42.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-02 at 15.45.39.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <h2>Module override</h2>
+            <div class="fragment">
+                <p>van</p>
+                <pre data-id="code-animation"><code class="hljs php" data-trim>
+						/modules/mod_articles/tmpl/default.php
+					</code></pre>
+                <p>naar</p>
+                <pre data-id="code-animation"><code class="hljs php" data-trim>
+						/templates/cassiopeia_child/html/mod_articles/advent.php
+					</code></pre>
+            </div>
+        </section>
+
+        <section data-auto-animate>
+            <h4 data-id="code-title">mod_articles/advent.php</h4>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="47-53">
+&lt;?php
+
+/**
+ * @package         Joomla.Site
+ * @subpackage      mod_articles
+ *
+ * @copyright   (C) 2024 Open Source Matters, Inc. &lt;https://www.joomla.org&gt;
+ * @license         GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+use Joomla\CMS\Categories\Categories;
+use Joomla\CMS\Layout\LayoutHelper;
+
+defined('_JEXEC') or die;
+
+if (!$list)
+{
+    return;
+}
+
+$catids = $params->get('catid');
+
+if (empty($catids) && !empty($this->items))
+{
+    foreach ($this->items as $item)
+    {
+        if (!in_array($item->catid, $catids))
+        {
+            $catids[] = $item->catid;
+        }
+    }
+}
+
+$categoryImage = null;
+
+if (!empty($catids))
+{
+    $firstCatid = (int) $catids[0];
+
+    $categories = Categories::getInstance('Content');
+    $category   = $categories->get($firstCatid);
+
+    $params        = $category->getParams();
+    $categoryImage = $params->get('image');
+}
+
+echo LayoutHelper::render('template.advent.calendar',
+    [
+        'id'         => 'mod' . $module->id,
+        'items'      => $list,
+        'background' => $categoryImage
+    ]
+);</code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-02 at 15.53.24.png" alt=""/>
+        </section>
+
+        <section data-auto-animate>
+            <img src="images/20251003-jdnl25/Screenshot 2025-10-02 at 15.45.39.png" alt=""/>
+        </section>
+
+        <section style="text-align: left;">
+            <h1>Dank</h1>
+            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+
+                <!-- Linker kolom -->
+                <div style="flex: 1;">
+                    <style>
+                        .pulse-fill {
+                            fill: #f1bb2c;
+                            animation: colorchange 5s infinite alternate;
+                        }
+
+                        @keyframes colorchange {
+                            50%  { fill: #e3261c; }
+                            100% { fill: #6a9dd3; }
+                        }
+                    </style>
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon-fw" aria-hidden="true">
+                        <path class="pulse-fill" d="M631.98 32H531.73c5.93-6.14 10.4-13.63 12.18-22.36 1.01-4.96-2.88-9.64-7.94-9.64H416c-70.69 0-128 57.31-128 128H160c-28.84 0-54.4 12.98-72 33.11V160c-48.53 0-88 39.47-88 88v56c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-56c0-13.22 6.87-24.39 16.78-31.68-.21 2.58-.78 5.05-.78 7.68 0 27.64 11.84 52.36 30.54 69.88l-25.72 68.6a63.945 63.945 0 0 0-2.16 37.99l24.85 99.41A15.982 15.982 0 0 0 107.02 512h65.96c10.41 0 18.05-9.78 15.52-19.88l-26.31-105.26 23.84-63.59 102.04 22.33V496c0 8.84 7.16 16 16 16h64c8.84 0 16-7.16 16-16V318.22c19.74-20.19 32-47.75 32-78.22 0-.22-.07-.42-.08-.64V136.89l16 7.11 18.9 37.7c7.45 14.87 25.05 21.55 40.49 15.37l32.55-13.02a31.997 31.997 0 0 0 20.12-29.74L544 83.3l92.42-36.65c6.59-4.38 3.48-14.65-4.44-14.65zM480 96c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16z"/>
+                    </svg>
+
+                </div>
+
+                <!-- Rechter kolom -->
+                <div style="flex: 1; text-align: center;">
+                    <ul>
+                        <li>HKweb.nl</li>
+                        <li>slides => <a href="https://noti.st/hans2103">noti.st/hans2103</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/zoom/zoom.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/search/search.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+
+</script>
+
+</body>
 </html>
