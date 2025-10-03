@@ -763,6 +763,75 @@ echo LayoutHelper::render('template.advent.calendar',
         </section>
 
         <section data-auto-animate>
+            <h4 data-id="code-title">com_content/category/advent.php</h4>
+            <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers="19">
+&lt;?php
+
+/**
+ * @package         Joomla.Site
+ * @subpackage      com_content
+ *
+ * @copyright   (C) 2006 Open Source Matters, Inc. &lt;https://www.joomla.org&gt;
+ * @license         GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+use Joomla\CMS\Layout\LayoutHelper;
+
+defined('_JEXEC') or die;
+
+if (!$this->items):
+    return;
+endif;
+
+echo LayoutHelper::debug('template.advent.calendar',
+    [
+        'id'         => 'com' . $this->category->id,
+        'items'      => $this->items,
+        'background' => $this->category->getParams()->get('image') ?? false
+    ]
+);
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h4 data-id="code-title">com_content/category/advent.php</h4>
+            <pre data-id="code-animation"><code class="hljs stylus" data-trim data-line-numbers>
+Layout: template.advent.calendar
+Include Paths: Array
+(
+[0] => /templates/cassiopeia_child/html/layouts/com_content
+[1] => /templates/cassiopeia/html/layouts/com_content
+[2] => /components/com_content/layouts
+[3] => /templates/cassiopeia_child/html/layouts
+[4] => /templates/cassiopeia/html/layouts
+[5] => /layouts
+)
+
+Searching layout for: template/advent/calendar.php
+Unable to find layout:  template.advent.calendar
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
+            <h4 data-id="code-title">com_content/category/advent.php</h4>
+            <pre data-id="code-animation"><code class="hljs stylus" data-trim data-line-numbers>
+Layout: template.advent.calendar
+Include Paths: Array
+(
+[0] => /templates/cassiopeia_child/html/layouts/com_content
+[1] => /templates/cassiopeia/html/layouts/com_content
+[2] => /components/com_content/layouts
+[3] => /templates/cassiopeia_child/html/layouts
+[4] => /templates/cassiopeia/html/layouts
+[5] => /layouts
+)
+
+Searching layout for: template/advent/calendar.php
+Found layout: /templates/cassiopeia_child/html/layouts/template/advent/calendar.php
+            </code></pre>
+        </section>
+
+        <section data-auto-animate>
             <h4 data-id="code-title">layouts/template/advent/calendar.php</h4>
             <pre data-id="code-animation"><code class="hljs php" data-trim data-line-numbers>
 &lt;?php
